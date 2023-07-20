@@ -1,0 +1,41 @@
+button {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  user-select: none;
+  height: 2.5rem;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.75rem;
+  font-family: $light;
+  border-radius: $border-radius-sm;
+  overflow: hidden;
+  border: 1px solid transparent;
+  outline: none;
+  white-space: nowrap;
+
+  &.primary {
+    background-color: $grey800;
+    color: $grey100;
+    border-color: $grey800;
+  }
+
+  &.secondary {
+    background-color: transparent;
+    color: $grey700;
+    border-color: $grey700;
+    font-weight: 600;
+
+    &:hover {
+      background-color: rgba($color: $white, $alpha: 0.2);
+    }
+  }
+
+  svg {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-right: 0.75rem;
+  }
+}

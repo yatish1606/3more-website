@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4d04c8a3.css",
+    "main.js": "/static/js/main.06d8415c.js",
+    "static/media/picture-gallery-landing.svg": "/static/media/picture-gallery-landing.42d9e57a4b0eae11f779ed32b73464b7.svg",
+    "static/media/e-commerce.jpg": "/static/media/e-commerce.cbf79d5bc01b988f4dae.jpg",
+    "static/media/cloud-migration.jpg": "/static/media/cloud-migration.52d3e38ad4871179a70b.jpg",
+    "static/media/mobile-development.jpg": "/static/media/mobile-development.888552852d0f52f55a70.jpg",
+    "static/media/relative-book.ttf": "/static/media/relative-book.342a213f0514da1c9e95.ttf",
+    "static/media/graph.jpg": "/static/media/graph.8b2e33f39b54e01e3702.jpg",
+    "static/media/finaqua.png": "/static/media/finaqua.276978c1ce1450a5c486.png",
+    "static/media/logo.svg": "/static/media/logo.4ddd87882bca278d769b557d736d4467.svg",
+    "static/media/AniruddhaTongaonkar.png": "/static/media/AniruddhaTongaonkar.080fe34a137d48fbd901.png",
+    "static/media/Hauora-Regular.otf": "/static/media/Hauora-Regular.df0123aafcdae4597f7c.otf",
+    "static/media/planning.jpg": "/static/media/planning.cd8d1109009388cc9b3c.jpg",
+    "static/media/consultation.jpg": "/static/media/consultation.7a5867a753371c797cc7.jpg",
+    "static/media/meeting.jpg": "/static/media/meeting.5ffab611ae9973264f85.jpg",
+    "static/media/OakSans-SemiBold.ttf": "/static/media/OakSans-SemiBold.2df99b9f76003fcbfce9.ttf",
+    "static/media/OakSans-Regular.ttf": "/static/media/OakSans-Regular.39ae989fcc1f0b3c30f7.ttf",
+    "static/media/FoundersGrotesk-Medium.otf": "/static/media/FoundersGrotesk-Medium.bd60933299b8e5db144f.otf",
+    "static/media/webdev.jpg": "/static/media/webdev.72f8733b5aa7e0e633b9.jpg",
+    "static/media/googlemaps.png": "/static/media/googlemaps.59363b0fd85d08330014.png",
+    "static/media/Bifocals.otf": "/static/media/Bifocals.1ded24d14a7712cb56ba.otf",
+    "index.html": "/index.html",
+    "main.4d04c8a3.css.map": "/static/css/main.4d04c8a3.css.map",
+    "main.06d8415c.js.map": "/static/js/main.06d8415c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d04c8a3.css",
+    "static/js/main.06d8415c.js"
+  ]
+}

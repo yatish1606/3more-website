@@ -1,0 +1,12 @@
+$header-height-with-banner: 6rem;
+$header-height-without-banner: 4rem;
+
+$side-padding-desktop: 10%;
+$side-padding-mobile: 1.25rem;
+
+$border-radius-sm: 2.5px;
+$border-radius-lg: 0.75rem;
+
+:export {
+  header-height-with-banner: $header-height-with-banner;
+}
