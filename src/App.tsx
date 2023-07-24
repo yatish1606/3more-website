@@ -5,6 +5,7 @@ import './ui/_global.scss'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ContactUs from './pages/ContactUs'
+import Offerings from './pages/Offerings'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Landing />} />
             <Route path='/contact' element={<ContactUs />} />
+            <Route path='/offerings/*' element={<Offerings />} />
           </Routes>
         </main>
         <Footer />

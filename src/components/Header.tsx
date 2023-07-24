@@ -6,7 +6,7 @@ import logo from '../assets/images/logo.svg'
 import { useEffect, useState } from 'react'
 import digitalServices, { DigitalService } from '../data/digitalServices'
 import businessServices, { BusinessService } from '../data/businessServices'
-import { isMobile } from '../utils'
+import { HashLinkWithFragment, isMobile } from '../utils'
 
 const Header = (): JSX.Element => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -45,28 +45,33 @@ const Header = (): JSX.Element => {
                   <NavigationMenu.Item>
                     <NavigationMenu.Trigger className='nav-trigger'>
                       <p>
-                        {' '}
-                        Offerings <span className='caret-down'>{icons.chevronDown}</span>
+                        <Link to='/offerings'>
+                          Offerings <span className='caret-down'>{icons.chevronDown}</span>
+                        </Link>
                       </p>
                     </NavigationMenu.Trigger>
                     <NavigationMenu.Content className='nav-content'>
                       <section className='nav-column'>
-                        <h5>Digital Offerings</h5>
+                        <Link to='/offerings'>
+                          <h5>Digital Offerings</h5>
+                        </Link>
                         <ul>
                           {digitalServices.map((service: DigitalService) => (
                             <li>
-                              <Link to={service.link}>
-                                {service.title
-                                  .replace('<span className="highlight">', '')
-                                  .replace('</span>', '')}{' '}
+                              <HashLinkWithFragment path={'offerings' + service.link}>
+                                {service.title.match(
+                                  /(?<=<span className="highlight">).*?(?=<\/span>)/,
+                                )?.[0] || ''}{' '}
                                 {icons.arrowUpRight}
-                              </Link>
+                              </HashLinkWithFragment>
                             </li>
                           ))}
                         </ul>
                       </section>
                       <section className='nav-column'>
-                        <h5>Business Offerings</h5>
+                        <Link to='/offerings'>
+                          <h5>Business Offerings</h5>
+                        </Link>
                         <ul>
                           {businessServices.map((service: BusinessService) => (
                             <li>
@@ -130,11 +135,17 @@ const Header = (): JSX.Element => {
                     <ul>
                       {digitalServices.map((service: DigitalService) => (
                         <li>
-                          <Link to={service.link}>
+                          {/* <Link to={service.link}>
                             {service.title.match(
                               /(?<=<span className="highlight">).*?(?=<\/span>)/,
                             )?.[0] || ''}
-                          </Link>
+                          </Link> */}
+                          <HashLinkWithFragment path={'offerings' + service.link}>
+                            {service.title
+                              .replace('<span className="highlight">', '')
+                              .replace('</span>', '')}{' '}
+                            {icons.arrowUpRight}
+                          </HashLinkWithFragment>
                         </li>
                       ))}
                     </ul>

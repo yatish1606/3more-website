@@ -194,6 +194,10 @@
       letter-spacing: inherit;
       font-size: inherit;
       margin: 0rem 0;
+
+      a {
+        all: inherit;
+      }
     }
   }
   .nav-trigger:focus,
@@ -333,16 +337,20 @@
     svg {
       width: 1rem;
       height: 1rem;
+      transform: none;
+      transition: none;
+      animation: none;
+      stroke: $grey700;
+      width: inherit;
+      height: inherit;
+      stroke-width: 1.5;
     }
-  }
-  [data-state='open'] .caret-down {
-    transform: rotate(-180deg);
   }
 
   .nav-arrow {
     position: relative;
     top: 70%;
-    background-color: white;
+    background-color: transparent;
     width: 10px;
     height: 10px;
     transform: rotate(45deg);
