@@ -289,6 +289,7 @@ const Landing = () => {
                   <Link to={item.redirectTo} key={index}>
                     <div className='carousel-item'>
                       <div className='carousel-image'>
+                        <div className='image-overlay'></div>
                         <img src={item.imageSource} alt={item.title} />
                       </div>
                       <div className='carousel-info'>
@@ -376,7 +377,7 @@ const Landing = () => {
                 {/* <p className='first-line'>{firstLine}</p> */}
                 <img src={service.image} alt={service.title} />
                 <p className='rest'>{firstLine}</p>
-                <Link to={service.link}>Learn more</Link>
+                <Link to={service.link}>Read more</Link>
               </article>
             )
           })}
@@ -453,7 +454,7 @@ const Landing = () => {
                         {!isMobileDevice && <p>{service.shortDescription}</p>}
                       </div>
                     </div>
-                    {!isMobileDevice && <Link to={service.link}>Learn more</Link>}
+                    {!isMobileDevice && <Link to={service.link}>Read more</Link>}
                   </article>
                 )
               })}
@@ -475,13 +476,13 @@ const Landing = () => {
                         {!isMobileDevice && <p>{service.shortDescription}</p>}
                       </div>
                     </div>
-                    {!isMobileDevice && <Link to={service.link}>Learn more</Link>}
+                    {!isMobileDevice && <Link to={service.link}>Read more</Link>}
                   </article>
                 )
               })}
           </section>
           <br />
-          <h5 className='highlight'>People and Consulting</h5>
+          <h5 className='highlight'>Consulting and Staffing</h5>
           <section className='business-services-grid'>
             {businessServices
               .filter((service: BusinessService) => service.category === 'People')
@@ -497,7 +498,7 @@ const Landing = () => {
                         {!isMobileDevice && <p>{service.shortDescription}</p>}
                       </div>
                     </div>
-                    {!isMobileDevice && <Link to={service.link}>Learn more</Link>}
+                    {!isMobileDevice && <Link to={service.link}>Read more</Link>}
                   </article>
                 )
               })}
@@ -619,6 +620,7 @@ const Landing = () => {
             functions including Floor automation, Safety, Quality, Production, AndOn and Management
             reporting.`
                 .split('.')
+                .slice(0, -1)
                 .map(sentence => sentence.trim())}
             />
           </p>
@@ -640,8 +642,30 @@ const Landing = () => {
         <section className='success-stories-header'>
           <small className='tag'>Success stories</small>
           <h2>Hear it from our clients</h2>
+          {!isMobileDevice && (
+            <div className='success-stories-arrows'>
+              <Button variant='secondary' onClick={slideToPrevItem}>
+                {icons.arrowLeftLong}
+              </Button>
+              <Button variant='secondary' onClick={slideToNextItem}>
+                {icons.arrowRightLong}
+              </Button>
+            </div>
+          )}
         </section>
-        <section className='reviews-slider'>{carouselFragment}</section>
+        <section className='reviews-slider'>
+          {carouselFragment}
+          {isMobileDevice && (
+            <div className='success-stories-arrows'>
+              <Button variant='secondary' onClick={slideToPrevItem}>
+                {icons.arrowLeftLong}
+              </Button>
+              <Button variant='secondary' onClick={slideToNextItem}>
+                {icons.arrowRightLong}
+              </Button>
+            </div>
+          )}
+        </section>
       </section>
     </div>
   )

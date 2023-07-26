@@ -115,46 +115,55 @@ $business-offerings-art-box-mobile: 2.5rem;
         &:hover {
           transform: scale(1.02);
           transition: 250ms ease-out;
-
-          .carousel-info {
-            background-color: $grey800 !important;
-            transition: 200ms ease-out;
-          }
         }
 
         .carousel-image {
-          position: absolute;
+          position: relative;
           width: 100%;
           height: 100%;
           overflow: hidden;
           top: 0;
           left: 0;
 
+          .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            background: radial-gradient(rgba($grey800, 0), rgba($grey800, 0.25));
+          }
+
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
+            position: relative;
           }
         }
 
         .carousel-info {
           position: absolute;
-          bottom: 1rem;
-          left: 1rem;
+          bottom: 1.25rem;
+          left: 1.25rem;
           display: flex;
           align-items: center;
-          background-color: rgba($color: $grey900, $alpha: 0.8);
+          background-color: rgba($color: $grey100, $alpha: 1);
           backdrop-filter: blur(5px);
           padding: 0.3rem 0.8rem;
           border-radius: 2rem;
           transition: 200ms ease-out;
           max-width: calc(100% - 3rem);
           overflow: hidden;
+          z-index: 101;
+          box-shadow: 0 0 1.5rem 4px rgba($color: $grey800, $alpha: 0.25);
 
           small {
             margin: 0;
-            color: $grey300;
-            font-size: 0.7rem;
+            color: $grey800;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
             text-overflow: ellipsis;
@@ -166,7 +175,7 @@ $business-offerings-art-box-mobile: 2.5rem;
             svg {
               width: 0.75rem;
               height: 0.75rem;
-              stroke: $grey300;
+              stroke: $grey800;
               position: absolute;
               top: 50%;
               right: 0.3rem;
@@ -773,6 +782,24 @@ $business-offerings-art-box-mobile: 2.5rem;
     width: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
+  }
+
+  .success-stories-arrows {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+
+    button {
+      svg {
+        margin-right: 0;
+      }
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
   }
 
   .reviews-slider {
@@ -875,17 +902,19 @@ $business-offerings-art-box-mobile: 2.5rem;
 
           .mobile-carousel-info {
             position: absolute;
-            bottom: 1rem;
-            left: 1rem;
+            bottom: 1.25rem;
+            left: 1.25rem;
             display: flex;
             align-items: center;
-            background-color: rgba($color: $grey900, $alpha: 0.8);
+            background-color: rgba($color: $grey100, $alpha: 1);
             backdrop-filter: blur(5px);
             padding: 0.3rem 0.8rem;
             border-radius: 2rem;
             transition: 200ms ease-out;
             max-width: calc(100% - 3rem);
             overflow: hidden;
+            z-index: 101;
+            box-shadow: 0 0 1.5rem 4px rgba($color: $grey800, $alpha: 0.25);
 
             small {
               margin: 0;
@@ -1284,7 +1313,7 @@ $business-offerings-art-box-mobile: 2.5rem;
           align-items: center;
 
           a {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: $grey500;
             cursor: pointer;
             padding: 0.4rem 0.8rem;
@@ -1428,7 +1457,7 @@ $business-offerings-art-box-mobile: 2.5rem;
           }
           p {
             color: $grey300;
-            font-size: 0.9rem;
+            font-size: 1.12rem;
           }
 
           small {
@@ -1460,6 +1489,22 @@ $business-offerings-art-box-mobile: 2.5rem;
       width: 100%;
       display: flex;
       flex-direction: column;
+      position: relative;
+    }
+
+    .success-stories-arrows {
+      display: none;
+      position: absolute;
+      width: calc(100vw);
+      top: 50%;
+      left: -1 * $side-padding-mobile;
+      padding: 0 0.5rem;
+      transform: translateY(-50%);
+      justify-content: space-between;
+
+      button {
+        background-color: $white;
+      }
     }
 
     .reviews-slider {
@@ -1468,6 +1513,7 @@ $business-offerings-art-box-mobile: 2.5rem;
       height: auto;
       display: flex;
       margin-top: 2rem;
+      position: relative;
     }
 
     .testimonial-item {
@@ -1476,7 +1522,7 @@ $business-offerings-art-box-mobile: 2.5rem;
       height: 100%;
       padding: 2rem;
       flex-direction: column;
-      width: 100%;
+      width: calc(2rem + 100%);
       border: 1px solid $grey300;
       border-radius: $border-radius-lg;
       overflow: hidden;

@@ -20,19 +20,27 @@ const Offerings = () => {
         <h2>Cutting edge digital solutions</h2>
 
         {digitalServices.map((service: DigitalService, index: number) => {
-          return <DigitalOfferingItem service={service} key={index} />
+          return <DigitalOfferingItem service={service} key={index} index={index} />
         })}
+      </section>
+
+      <section className='business-offerings-main-container'>
+        <h2>Business-driving solutions</h2>
       </section>
     </div>
   )
 }
 
-const DigitalOfferingItem = ({ service }: { service: DigitalService }) => {
+const DigitalOfferingItem = ({ service, index }: { service: DigitalService; index: number }) => {
   const bullets = service.longDescription.split('.').slice(0, -1)
   return (
     <article className='digital-offerings-main-item' id={service.link.replace('#', '')}>
       <section className='digital-offerings-main-item-info'>
-        <h4 dangerouslySetInnerHTML={{ __html: service.title }}></h4>
+        <h4
+          dangerouslySetInnerHTML={{
+            __html: service.title,
+          }}
+        ></h4>
         <br />
         <List list={bullets} />
       </section>

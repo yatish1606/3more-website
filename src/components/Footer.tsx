@@ -13,10 +13,10 @@ const Footer = (): JSX.Element => {
           <div className='footer-links'>
             <Link to='#'>Home</Link>
             <Link to='#'>Portfolio</Link>
-            <Link to='#'>Services</Link>
+            <Link to='/offerings'>Services</Link>
             <Link to='#'>About Us</Link>
             <Link to='#'>FAQ</Link>
-            <Link to='#'>Contact Us</Link>
+            <Link to='/contact'>Contact Us</Link>
           </div>
           <small>&copy; 2023 3MORE IT Services Ltd. All rights reserved</small>
         </section>

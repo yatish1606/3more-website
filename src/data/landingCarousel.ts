@@ -18,38 +18,39 @@ interface LandingCarouselItem {
 
 const landingCarouselItems: Array<LandingCarouselItem> = [
   {
+    title: 'ECommerce Platform',
+    imageSource: eCommerce,
+    redirectTo: '/offerings',
+  },
+
+  {
     title: 'Web & Mobile App Development',
     imageSource: mobileDevelopment,
-    redirectTo: '#business-services',
+    redirectTo: '/offerings',
   },
   {
     title: 'Portflio Consulting',
     imageSource: meetingImage,
-    redirectTo: '#business-services',
-  },
-  {
-    title: 'ECommerce Platform',
-    imageSource: eCommerce,
-    redirectTo: '#digital-services',
+    redirectTo: '/offerings',
   },
   {
     title: 'Staffing Services',
     imageSource: consultationImage,
-    redirectTo: '#business-services',
+    redirectTo: '/offerings',
   },
   {
     title: 'Application Testing',
     imageSource: webdevImage,
-    redirectTo: '#business-services',
+    redirectTo: '/offerings',
   },
   {
     title: 'Cloud Migration',
     imageSource: cloudMigration,
-    redirectTo: '#business-services',
+    redirectTo: '/offerings',
   },
   {
     title: 'Product Engineering',
     imageSource: planningImage,
-    redirectTo: '#business-services',
+    redirectTo: '/offerings',
   },
 ]

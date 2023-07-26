@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     background-color: $grey200;
-    padding: $header-height-with-banner $side-padding-desktop 2rem $side-padding-desktop;
+    padding: $header-height-with-banner $side-padding-desktop 3rem $side-padding-desktop;
 
     .inline-form {
       display: flex;
@@ -40,8 +40,9 @@
     .digital-offerings-main-item {
       width: 100%;
       display: flex;
-      gap: 2rem;
+      gap: 3rem;
       padding: 1.5rem 0;
+      align-items: center;
 
       &:not(:last-child) {
         border-bottom: 1px solid $grey200;
@@ -63,6 +64,10 @@
         h4 {
           color: $grey800;
 
+          h4.grey500 {
+            color: $grey500;
+          }
+
           span {
             @extend h4;
             border-bottom: 5px solid $orange;
@@ -71,18 +76,23 @@
       }
 
       .digital-offerings-main-item-image {
-        width: calc(50% - 1rem);
+        flex: 1;
         border-radius: $border-radius-lg;
         overflow: hidden;
-        height: fit-content;
+
+        display: flex;
         margin-top: 1rem;
 
         img {
           width: 100%;
+          height: 100%;
           object-fit: cover;
           border-radius: $border-radius-lg;
         }
       }
     }
+  }
+
+  .business-offerings-main-container {
   }
 }
