@@ -241,14 +241,15 @@ const Landing = () => {
                   problems
                 </p>
                 <br />
-                <Button>Contact Us</Button>
+                <Link to='/contact' className='no-default-a'>
+                  <Button>Contact Us</Button>
+                </Link>
               </Fragment>
             ) : (
               <p>
-                At 3MORE we are committed to exceed the Customer satisfaction with the help of
-                continues innovation, adapt to emerging technologies and provide excellent customer
-                service. We develop Creative Products and provide Services to solve business
-                problems
+                At 3MORE, we strive to exceed customer satisfaction through innovation, adopting new
+                technologies, and providing excellent service, while offering creative products and
+                services to solve business problems.
               </p>
             )}
             {/* <br />

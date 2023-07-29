@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.8d8c18f1.css",
-    "main.js": "/static/js/main.4561e686.js",
+    "main.css": "/static/css/main.874803a8.css",
+    "main.js": "/static/js/main.1853cd71.js",
     "static/media/picture-gallery-landing.svg": "/static/media/picture-gallery-landing.42d9e57a4b0eae11f779ed32b73464b7.svg",
     "static/media/e-commerce.jpg": "/static/media/e-commerce.cbf79d5bc01b988f4dae.jpg",
     "static/media/cloud-migration.jpg": "/static/media/cloud-migration.52d3e38ad4871179a70b.jpg",
@@ -23,12 +23,13 @@
     "static/media/webdev.jpg": "/static/media/webdev.72f8733b5aa7e0e633b9.jpg",
     "static/media/googlemaps.png": "/static/media/googlemaps.59363b0fd85d08330014.png",
     "static/media/Bifocals.otf": "/static/media/Bifocals.1ded24d14a7712cb56ba.otf",
+    "static/media/landing-banner-bg.svg": "/static/media/landing-banner-bg.4088a98de2d3729eeaeb.svg",
     "index.html": "/index.html",
-    "main.8d8c18f1.css.map": "/static/css/main.8d8c18f1.css.map",
-    "main.4561e686.js.map": "/static/js/main.4561e686.js.map"
+    "main.874803a8.css.map": "/static/css/main.874803a8.css.map",
+    "main.1853cd71.js.map": "/static/js/main.1853cd71.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d8c18f1.css",
-    "static/js/main.4561e686.js"
+    "static/css/main.874803a8.css",
+    "static/js/main.1853cd71.js"
   ]
 }

@@ -76,7 +76,7 @@
 
   .header-banner {
     height: $header-height-with-banner - $header-height-without-banner;
-    background-color: $grey800;
+    background-color: $orange;
     width: 100%;
     display: flex;
     align-items: center;
@@ -337,8 +337,8 @@
     svg {
       width: 1rem;
       height: 1rem;
-      transform: none;
-      transition: none;
+      transform: none !important;
+      transition: none !important;
       animation: none;
       stroke: $grey700;
       width: inherit;

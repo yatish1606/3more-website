@@ -12,6 +12,8 @@ $business-offerings-art-box-mobile: 2.5rem;
   height: calc(100vh);
   padding-top: $header-height-without-banner;
   background-color: $white;
+  background: url('../assets/images/landing-banner-bg.svg');
+  background-size: cover;
 
   .landing-top {
     width: 100%;
