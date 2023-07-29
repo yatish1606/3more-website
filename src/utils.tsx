@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { HashLink } from 'react-router-hash-link'
 
 const isMobile = () => {
@@ -7,11 +8,13 @@ const isMobile = () => {
 const HashLinkWithFragment = ({
   children,
   path,
+  className,
 }: {
-  children: any[]
+  children: ReactNode
   path: string
+  className?: string
 }): JSX.Element | null => {
-  if (!children || !children.length) return null
+  if (!children) return null
   const scrollOffset = (element: Element) => {
     const yCoordinate = element.getBoundingClientRect().top + window.scrollY
     const yOffset = -64
@@ -22,7 +25,12 @@ const HashLinkWithFragment = ({
   }
 
   return (
-    <HashLink smooth to={'/' + path} scroll={element => scrollOffset(element)}>
+    <HashLink
+      className={className || ''}
+      smooth
+      to={'/' + path}
+      scroll={element => scrollOffset(element)}
+    >
       {children}
     </HashLink>
   )

@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: HauoraSans;
-  src: url('../assets/fonts/Hauora-Regular.otf');
+  src: url('../assets/fonts/Hauora-Medium.otf');
 }
 
 @font-face {
@@ -28,8 +28,18 @@
   src: url('../assets/fonts/relative-book.ttf');
 }
 
+@font-face {
+  font-family: TTHoves;
+  src: url('../assets/fonts/TT\ Hoves\ Medium.otf');
+}
+
+@font-face {
+  font-family: TTHovesLight;
+  src: url('../assets/fonts/TT\ Hoves\ Regular.otf');
+}
+
 $body: 'RelativeBook';
-$display: 'OakSansBold';
+$display: 'TTHoves';
 $bodyBold: 'HauoraSansSemibold';
 $light: 'OakSans';
 
@@ -42,8 +52,8 @@ h6,
 p,
 small,
 a {
-  -webkit-user-select: none;
-  user-select: none;
+  // -webkit-user-select: none;
+  // user-select: none;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -57,52 +67,52 @@ h1 {
   font-family: $bodyBold;
   line-height: 1.2;
   letter-spacing: -0.04rem;
-  color: $grey900;
+  color: $grey700;
   margin: 0.5rem 0;
 }
 
 h2 {
   font-size: 2.2rem;
-  font-family: $display;
+  font-family: $bodyBold;
   line-height: 1.4;
   letter-spacing: -0.03rem;
-  color: $grey900;
+  color: $grey700;
   margin: 0.5rem 0;
 }
 
 h3 {
   font-size: 1.7rem;
-  font-family: $display;
+  font-family: $bodyBold;
   line-height: 1.5;
   letter-spacing: -0.015rem;
-  color: $grey900;
+  color: $grey700;
   margin: 0.5rem 0;
 }
 
 h4 {
   font-size: 1.5rem;
-  font-family: $display;
+  font-family: $bodyBold;
   line-height: 1.5;
   letter-spacing: 0;
-  color: $grey800;
+  color: $grey700;
   margin: 0.5rem 0;
 }
 
 h5 {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-family: $display;
   line-height: 1.5;
-  letter-spacing: 0;
-  color: $grey800;
+  letter-spacing: -0.25px;
+  color: $grey700;
   margin: 0.5rem 0;
 }
 
 h6 {
-  font-size: 1.1rem;
-  font-family: $bodyBold;
+  font-size: 1.15rem;
+  font-family: $display;
   line-height: 1.7;
-  letter-spacing: 0.4px;
-  color: $grey800;
+  letter-spacing: -0.2px;
+  color: $grey700;
   margin: 0.5rem 0;
 }
 
@@ -116,7 +126,7 @@ p {
   font-weight: 300;
 }
 
-a {
+a:not(.no-default-a) {
   font-size: 1rem;
   font-family: $bodyBold;
   line-height: 1.7;
@@ -231,7 +241,7 @@ b {
     font-family: $bodyBold;
   }
   h6 {
-    font-size: 1.05rem;
+    font-size: 1.25rem;
   }
   p {
     font-size: 1.12rem;

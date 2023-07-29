@@ -17,7 +17,7 @@ import webdevImage from '../assets/images/webdev.jpg'
 import uxImage from '../assets/images/ux.jpg'
 import testimonials, { Testimonial } from '../data/testimonial'
 import graphImage from '../assets/images/graph.jpg'
-import { isMobile } from '../utils'
+import { HashLinkWithFragment, isMobile } from '../utils'
 
 const Landing = () => {
   const [index, setIndex] = useState(0)
@@ -438,28 +438,30 @@ const Landing = () => {
           </p> */}
 
           <br />
-          <h5 className='highlight'>Engineering and Development</h5>
+          {/* <h5 className='highlight'>Engineering and Development</h5> */}
           <section className='business-services-grid'>
             {businessServices
-              .filter((service: BusinessService) => service.category === 'Engineering')
+              // .filter((service: BusinessService) => service.category === 'Engineering')
               .map((service: BusinessService, index: number) => {
                 return (
-                  <article key={index} className='business-services-item'>
-                    <div className='business-serives-item-main'>
-                      <div className='business-services-item-icon'>{service.icon}</div>
-                      <div className='business-services-info'>
-                        <h6>
-                          {service.title} {isMobileDevice && <span>{icons.arrowUpRight}</span>}
-                        </h6>
-                        {!isMobileDevice && <p>{service.shortDescription}</p>}
+                  <HashLinkWithFragment path={'offerings' + service.link} className='no-default-a'>
+                    <article key={index} className='business-services-item'>
+                      <div className='business-serives-item-main'>
+                        <div className='business-services-item-icon'>{service.icon}</div>
+                        <div className='business-services-info'>
+                          <h6>
+                            {service.title} {isMobileDevice && <span>{icons.arrowUpRight}</span>}
+                          </h6>
+                          {/* {!isMobileDevice && <p>{service.shortDescription}</p>} */}
+                        </div>
                       </div>
-                    </div>
-                    {!isMobileDevice && <Link to={service.link}>Read more</Link>}
-                  </article>
+                      {/* {!isMobileDevice && <Link to={service.link}>Read more</Link>} */}
+                    </article>
+                  </HashLinkWithFragment>
                 )
               })}
           </section>
-          <br />
+          {/* <br />
           <h5 className='highlight'>Testing and Security</h5>
           <section className='business-services-grid'>
             {businessServices
@@ -502,7 +504,7 @@ const Landing = () => {
                   </article>
                 )
               })}
-          </section>
+          </section> */}
         </section>
       </section>
       <section id='industries' className='industries-container'>

@@ -13,7 +13,7 @@ interface DigitalService {
 
 const digitalServices: Array<DigitalService> = [
   {
-    title: `<span className="highlight">Cloud Migration</span> offerings to simplify and streamline transitioning to the cloud`,
+    title: `<span className="highlight">Cloud Migration</span> offerings to simplify and streamline cloud transitions`,
     shortDescription: `We leverage set of tools designed to facilitate a smooth and efficient migration to the cloud & seamless cloud transition. We assist you in transitioning your existing IT infrastructure, applications, data, and processes from on-premises environments to the cloud. `,
     longDescription: `Through our Cloud migration offerings we assist our Clients in transitioning their existing IT infrastructure, applications, data, and processes from on-premises environments to the cloud. We leverage set of tools designed to facilitate a smooth and efficient migration to the cloud. Offering focus is to enable clients to leverage the benefits of cloud computing, such as scalability, agility, cost savings, and enhanced collaboration. Our end to end offering includes Primary Assessment/AS IS analysis, Architecture and Design, Migration (Data + App) , Testing and incremental Rollout phase.`,
     image: cloudMigration,
