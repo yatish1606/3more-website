@@ -86,18 +86,15 @@ const Header = (): JSX.Element => {
                   </NavigationMenu.Item>
 
                   <NavigationMenu.Item>
-                    <NavigationMenu.Trigger className='nav-trigger'>
-                      <p>
-                        Portfolio <span className='caret-down'>{icons.chevronDown}</span>
-                      </p>
-                    </NavigationMenu.Trigger>
-                    <NavigationMenu.Content className='nav-content'></NavigationMenu.Content>
+                    <Link to='/portfolio' className='nav-trigger'>
+                      Portfolio
+                    </Link>
                   </NavigationMenu.Item>
 
                   <NavigationMenu.Item>
-                    <NavigationMenu.Link className='nav-link' href='https://github.com/radix-ui'>
+                    <Link to='/about' className='nav-trigger'>
                       About Us
-                    </NavigationMenu.Link>
+                    </Link>
                   </NavigationMenu.Item>
 
                   <NavigationMenu.Indicator className='nav-indicator'>
@@ -141,9 +138,9 @@ const Header = (): JSX.Element => {
                             )?.[0] || ''}
                           </Link> */}
                           <HashLinkWithFragment path={'offerings' + service.link}>
-                            {service.title
-                              .replace('<span className="highlight">', '')
-                              .replace('</span>', '')}{' '}
+                            {service.title.match(
+                              /(?<=<span className="highlight">).*?(?=<\/span>)/,
+                            )?.[0] || ''}
                             {icons.arrowUpRight}
                           </HashLinkWithFragment>
                         </li>

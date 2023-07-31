@@ -15,6 +15,10 @@ interface BusinessService extends DigitalService {
   category: 'Engineering' | 'Testing' | 'People'
   label: string
   weCanHelpYouWith: string
+  projectInfo?: {
+    link: string
+    title: string
+  }
 }
 
 const businessServices: Array<BusinessService> = [
@@ -28,6 +32,10 @@ const businessServices: Array<BusinessService> = [
     category: 'Engineering',
     label: 'Web based applications',
     weCanHelpYouWith: 'Creating custom web software',
+    projectInfo: {
+      title: 'PTWikki',
+      link: '/portfolio#ptwikki',
+    },
     // <a href="https://www.freepik.com/free-ai-image/glowing-blue-office-desk-with-modern-technology-generated-by-ai_41570050.htm#page=2&query=cloud%20computing&position=23&from_view=search&track=ais">Image By vecstock</a>
   },
   {
@@ -40,6 +48,10 @@ const businessServices: Array<BusinessService> = [
     category: 'Engineering',
     label: 'Web based applications',
     weCanHelpYouWith: 'Developing mobile apps',
+    projectInfo: {
+      title: 'PTWikki',
+      link: '/portfolio#ptwikki',
+    },
     // <a href="https://www.freepik.com/free-ai-image/glowing-blue-office-desk-with-modern-technology-generated-by-ai_41570050.htm#page=2&query=cloud%20computing&position=23&from_view=search&track=ais">Image By vecstock</a>
   },
   {

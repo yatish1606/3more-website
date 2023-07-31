@@ -5,6 +5,8 @@ import { List } from '../components/CheckList'
 import businessServices, { BusinessService } from '../data/businessServices'
 import { HashLinkWithFragment, isMobile } from '../utils'
 import icons from '../ui/icons'
+import InlineEmailForm from '../components/InlineEmailForm'
+import { Link } from 'react-router-dom'
 
 const Offerings = () => {
   useEffect(() => {
@@ -22,10 +24,7 @@ const Offerings = () => {
         <h1>Digital and Business services that accelerate your growth</h1>
         <br />
         <p>Need a more in-depth information ? Drop your mail and we'll get back to you.</p>
-        <form className='inline-form'>
-          <input type='email' placeholder='your-email@mail.com' autoFocus autoComplete='on' />
-          <Button type='submit'>Contact me</Button>
-        </form>
+        <InlineEmailForm />
       </section>
       <section className='offerings-main-container business-offerings-main-container'>
         <h2>Crafting business solutions that help you with ...</h2>
@@ -75,7 +74,13 @@ const BusinessOfferingItem = ({ service, index }: { service: BusinessService; in
     <article className='offerings-main-item' id={service.link.replace('#', '')}>
       <section className='offerings-main-item-image'>
         <img src={service.image} alt={service.title} />
-        {/* <div className='offerings-main-item-image-overlay'></div> */}
+        {/* <div className='offerings-main-item-image-overlay'></div>
+         */}
+        {service.projectInfo && (
+          <HashLinkWithFragment path={service.projectInfo.link}>
+            <div className='business-offering-link-project'>{icons.arrowUpRight}</div>
+          </HashLinkWithFragment>
+        )}
       </section>
       <section className='offerings-main-item-info'>
         <small className='orange'>{service.title}</small>

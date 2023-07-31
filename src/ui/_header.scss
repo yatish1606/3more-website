@@ -185,6 +185,7 @@
     justify-content: center;
     vertical-align: middle;
     text-transform: capitalize;
+    text-decoration: none;
     cursor: pointer;
 
     p {
@@ -452,7 +453,7 @@
       border-bottom: 1px solid $grey300 !important;
       .header-main {
         padding: 0 $side-padding-mobile;
-        background-color: $white;
+
         .header-main-left {
           .header-logo {
             padding: 1.2rem 0;
@@ -514,16 +515,17 @@
         }
 
         .mobile-header-heading {
-          font-size: 1.05rem;
+          font-size: 1.15rem;
           color: $grey800;
           text-decoration: none;
           font-family: $bodyBold;
           margin: 0.75rem 0;
           width: 100%;
+          letter-spacing: 0.25px;
 
           &:not(:first-child) {
             border-top: 0.5px solid $grey200;
-            padding-top: 0.5rem;
+            padding-top: 0.725rem;
           }
         }
 

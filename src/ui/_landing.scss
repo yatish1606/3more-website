@@ -322,7 +322,7 @@ $business-offerings-art-box-mobile: 2.5rem;
       display: flex;
       flex-direction: column;
 
-      h6 {
+      h5 {
         height: 5.5rem;
         // background-color: red;
         // display: flex;
@@ -331,7 +331,7 @@ $business-offerings-art-box-mobile: 2.5rem;
         text-decoration: none;
 
         span {
-          @extend h6;
+          @extend h5;
           border-bottom: 0.2rem solid $orange;
         }
       }
@@ -865,7 +865,8 @@ $business-offerings-art-box-mobile: 2.5rem;
       display: flex;
       flex-direction: column;
       height: calc(100svh);
-      padding-bottom: 2rem;
+      padding-bottom: 3rem;
+      background-image: url('../assets/images/landing-banner-bg-mobile.svg');
 
       .banner-strip {
         display: none;
@@ -1030,14 +1031,13 @@ $business-offerings-art-box-mobile: 2.5rem;
           padding-bottom: 1rem;
         }
 
-        h6 {
+        h5 {
           height: auto;
           margin-top: 0;
           margin-bottom: 0.5rem;
           text-decoration: none;
 
           span {
-            @extend h6;
             border-bottom: 0.2rem solid $orange;
           }
         }

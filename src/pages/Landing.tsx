@@ -18,6 +18,7 @@ import uxImage from '../assets/images/ux.jpg'
 import testimonials, { Testimonial } from '../data/testimonial'
 import graphImage from '../assets/images/graph.jpg'
 import { HashLinkWithFragment, isMobile } from '../utils'
+import InlineEmailForm from '../components/InlineEmailForm'
 
 const Landing = () => {
   const [index, setIndex] = useState(0)
@@ -241,9 +242,7 @@ const Landing = () => {
                   problems
                 </p>
                 <br />
-                <Link to='/contact' className='no-default-a'>
-                  <Button>Contact Us</Button>
-                </Link>
+                <InlineEmailForm />
               </Fragment>
             ) : (
               <p>
@@ -374,7 +373,7 @@ const Landing = () => {
               .trim()
             return (
               <article className='digital-offering-item'>
-                <h6 dangerouslySetInnerHTML={{ __html: service.title }}></h6>
+                <h5 dangerouslySetInnerHTML={{ __html: service.title }}></h5>
                 {/* <p className='first-line'>{firstLine}</p> */}
                 <img src={service.image} alt={service.title} />
                 <p className='rest'>{firstLine}</p>

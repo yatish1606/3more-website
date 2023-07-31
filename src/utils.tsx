@@ -17,7 +17,7 @@ const HashLinkWithFragment = ({
   if (!children) return null
   const scrollOffset = (element: Element) => {
     const yCoordinate = element.getBoundingClientRect().top + window.scrollY
-    const yOffset = -64
+    const yOffset = -80
     window.scrollTo({
       top: yCoordinate + yOffset,
       behavior: 'smooth',

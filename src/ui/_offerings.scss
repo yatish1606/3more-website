@@ -12,23 +12,6 @@
     flex-direction: column;
     background-color: $white;
     padding: $header-height-with-banner $side-padding-desktop 3rem $side-padding-desktop;
-
-    .inline-form {
-      display: flex;
-
-      input {
-        width: min(30vw, 18rem);
-        margin: 0;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-
-      button {
-        height: 3rem;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
-    }
   }
 
   .offerings-main-container {
@@ -116,6 +99,7 @@
       cursor: pointer;
       overflow: hidden;
       margin: 0;
+      transition: 250ms ease-out;
 
       &:first-child {
         grid-column-start: 1;
@@ -167,6 +151,20 @@
         grid-column-end: 10;
       }
 
+      &:hover {
+        transform: translateY(-0.25rem) scale(1.005);
+        transition: 250ms ease-out;
+        .offerings-main-item-image {
+          .business-offering-link-project {
+            background-color: $grey800;
+
+            svg {
+              stroke: $white;
+            }
+          }
+        }
+      }
+
       .offerings-main-item-info {
         display: flex;
         flex-direction: column;
@@ -192,7 +190,7 @@
           svg {
             width: 1.5rem;
             height: 1.5rem;
-            stroke-width: 1.5px;
+            stroke-width: 2px;
             margin-bottom: 2.5px;
             margin-right: 0.75rem;
             margin-left: -2px;
@@ -218,6 +216,31 @@
           height: 100%;
           z-index: 100;
           background: linear-gradient(to top, rgba($white, 1), rgba($white, 0) 50%);
+        }
+
+        .business-offering-link-project {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          width: 2.25rem;
+          height: 2.25rem;
+          border: 1px solid $grey700;
+          background-color: $white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: 250ms ease-out;
+          border-radius: 50%;
+          overflow: hidden;
+
+          svg {
+            stroke: $grey700;
+            width: 1rem;
+            stroke-width: 1.5px;
+            height: 1rem;
+            margin-right: 0.3rem;
+          }
         }
 
         img {
