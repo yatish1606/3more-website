@@ -25,11 +25,21 @@
     height: $header-height-without-banner;
   }
 
-  &.no-scroll {
+  &.no-scroll,
+  &.mobile-border {
     background-color: transparent;
 
     .header-main {
       border-color: transparent;
+    }
+
+    .header-banner {
+      border-bottom: 1px solid transparent;
+    }
+  }
+  &.mobile-border {
+    .header-banner {
+      border-bottom-color: $grey300;
     }
   }
 
@@ -75,25 +85,44 @@
   //   }
 
   .header-banner {
-    height: $header-height-with-banner - $header-height-without-banner;
-    background-color: $orange;
+    height: calc($header-height-with-banner - $header-height-without-banner - 1px);
+    background-color: transparent;
+    border-bottom: 1px solid $grey300;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 $side-padding-desktop;
 
+    .header-banner-left {
+      display: flex;
+      align-items: center;
+      margin-right: 0.5rem;
+
+      .header-banner-tag {
+        background-color: $orangeDark;
+        padding: 0.25rem 0.6rem;
+        border-radius: $border-radius-lg / 2;
+        color: $white;
+        font-size: 0.7rem;
+        letter-spacing: 0.65px;
+        margin-right: 0.5rem;
+      }
+    }
+
     small {
-      color: $grey200;
+      color: $grey600;
+      font-size: 0.85rem;
+      letter-spacing: 0.2px;
     }
 
     a {
-      color: $grey100;
+      color: $grey800;
       font-family: $body;
       font-size: 0.9rem;
 
       svg {
-        stroke: $grey100;
+        stroke: $grey800;
       }
     }
   }
@@ -451,6 +480,29 @@
 
     .header-desktop-container {
       border-bottom: 1px solid $grey300 !important;
+
+      .header-banner {
+        z-index: 101;
+        padding: 0 $side-padding-mobile;
+
+        .header-banner-left {
+          width: 100%;
+
+          small {
+            width: max-content;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-bottom: 0.35rem;
+          }
+        }
+
+        svg {
+          stroke: $orangeDark;
+          width: 1.4rem;
+          height: 1.4rem;
+        }
+      }
       .header-main {
         padding: 0 $side-padding-mobile;
 
@@ -474,8 +526,8 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    top: 0;
-
+    top: calc(-1 * ($header-height-with-banner - $header-height-without-banner));
+    z-index: 99999;
     left: 0;
     overflow: hidden;
     // height: 60vh;

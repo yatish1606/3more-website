@@ -1,7 +1,7 @@
 .portfolio-container {
   width: 100%;
   min-height: 200vh;
-  padding-top: $header-height-without-banner;
+  padding-top: calc($header-height-with-banner);
   position: relative;
 
   .portfolio-header {
@@ -15,7 +15,7 @@
     width: 100%;
     padding: 1rem $side-padding-desktop;
     position: sticky;
-    top: calc($header-height-without-banner - 1px);
+    top: calc($header-height-with-banner - 1px);
     display: flex;
     background-color: $white;
     z-index: 101;

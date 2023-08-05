@@ -4,7 +4,7 @@ const CheckList = ({ checkList }: { checkList: string[] }): JSX.Element => {
   return (
     <ul>
       {checkList.map((item: string, index: number) => (
-        <li>
+        <li key={index}>
           <div className='check'> {icons.check} </div>
           <p>{item}</p>
         </li>
@@ -17,7 +17,7 @@ const List = ({ list }: { list: string[] }): JSX.Element => {
   return (
     <ul>
       {list.map((item: string, index: number) => (
-        <li className='li-reduced-padding'>
+        <li className='li-reduced-padding' key={index}>
           <div className='dash'> - </div>&nbsp;&nbsp; <p>{item}</p>
         </li>
       ))}

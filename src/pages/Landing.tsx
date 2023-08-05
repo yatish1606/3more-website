@@ -1,7 +1,11 @@
 import { Fragment, MutableRefObject, useEffect, useRef, useState } from 'react'
 import Button from '../components/Button'
 import icons from '../ui/icons'
-import { LandingCarouselItem, landingCarouselItems } from '../data/landingCarousel'
+import {
+  LandingCarouselItem,
+  landingCarouselItems,
+  landingCarouselItemsMobile,
+} from '../data/landingCarousel'
 import { Link } from 'react-router-dom'
 import { List, CheckList } from '../components/CheckList'
 import demoImage from '../assets/images/demo.jpg'
@@ -24,7 +28,7 @@ const Landing = () => {
   const [index, setIndex] = useState(0)
   const timeoutRef = useRef<any>(null)
   const delay: number = 5000
-  const carouselHeight: number = window.innerHeight - 112 - 224 - 64 + 64 + 48
+  const carouselHeight: number = window.innerHeight - 112 - 224 - 64 + 64 + 48 - 32
   const [previousTransform, setPreviousTransform] = useState(0)
   const [activeIndustry, setActiveIndustry] = useState<string>('BFSI')
 
@@ -41,6 +45,7 @@ const Landing = () => {
   }
 
   useEffect(() => {
+    if (isMobileDevice) return
     resetTimeout()
     timeoutRef.current = setTimeout(() => {
       setPreviousTransform(
@@ -98,14 +103,28 @@ const Landing = () => {
       itemsPerSlide: 2,
       // withLoop: true,
       withThumbs: false,
-      items: landingCarouselItems.map((item: LandingCarouselItem, index: number) => ({
+      items: landingCarouselItemsMobile.map((item: LandingCarouselItem, index: number) => ({
         id: item.title,
         renderItem: (
           <Link to={item.redirectTo} key={index}>
             <div className='mobile-carousel-item'>
-              <div className='mobile-carousel-image'>
-                <img src={item.imageSource} alt={item.title} />
-              </div>
+              {item.videoSource ? (
+                <div className='mobile-carousel-video'>
+                  <div className='image-overlay'></div>
+                  <video
+                    preload='auto'
+                    autoPlay
+                    loop
+                    muted
+                    controls={false}
+                    src={item.videoSource}
+                  ></video>
+                </div>
+              ) : (
+                <div className='mobile-carousel-image'>
+                  <img src={item.imageSource} alt={item.title} />
+                </div>
+              )}
               <div className='mobile-carousel-info'>
                 <small>
                   {item.title} {icons.arrowUpRight}
@@ -238,7 +257,7 @@ const Landing = () => {
             {isMobileDevice ? (
               <Fragment>
                 <p>
-                  At 3MORE we develop creative roducts and provide services to solve business
+                  At 3MORE we develop creative products and provide services to solve business
                   problems
                 </p>
                 <br />
@@ -288,10 +307,25 @@ const Landing = () => {
                 return (
                   <Link to={item.redirectTo} key={index}>
                     <div className='carousel-item'>
-                      <div className='carousel-image'>
-                        <div className='image-overlay'></div>
-                        <img src={item.imageSource} alt={item.title} />
-                      </div>
+                      {item.videoSource ? (
+                        <div className='carousel-video'>
+                          <div className='image-overlay'></div>
+                          <video
+                            preload='auto'
+                            autoPlay
+                            loop
+                            muted
+                            controls={false}
+                            src={item.videoSource}
+                          ></video>
+                        </div>
+                      ) : (
+                        <div className='carousel-image'>
+                          <div className='image-overlay'></div>
+                          <img src={item.imageSource} alt={item.title} />
+                        </div>
+                      )}
+
                       <div className='carousel-info'>
                         <small>
                           {item.title} {icons.arrowUpRight}
@@ -307,47 +341,52 @@ const Landing = () => {
         <div className='banner-strip'></div>
       </section>
       <section className='about-container'>
-        <h5>
-          <span className='grey600'>
-            {!isMobileDevice ? 'In todays digital era , w' : 'W'}e enable our customers to increase
-            their business value through simplification, automation and differentiation.
-          </span>{' '}
-          {isMobileDevice && (
-            <Fragment>
-              <br />
-              <br />
-            </Fragment>
-          )}
-          Our solutions help customers to improve productivity and enable them for adopting new
-          trends.
-        </h5>
         <section className='about-main'>
-          <div className='about-art'>
-            {/* <div className='about-art-item'>
-              <img src={uxImage} alt='ux' />
-            </div>
-            <div className='about-art-item'>
-              <img src={webdevImage} alt='webdev' />
-            </div>
-
-            <div className='about-art-item'></div>
-            <div className='about-art-item'>
-              <img src={workImage} alt='work' />
-            </div>
-            <div className='about-art-item'></div>
-            <div className='about-art-item'>
-              <img src={meetingImage} alt='planning' />
-            </div> */}
-            <img src={graphImage} alt='graph' />
+          <div className='about-title'>
+            <p>
+              {/* <span className='grey600'>
+              We enable our customers to increase their business value through simplification,
+              automation and differentiation.
+            </span>{' '} */}
+              <h2>
+                Simplification. <br /> Automation. <br /> Differentiation.
+              </h2>
+              <br />
+              Our solutions help customers to improve productivity and enable them for adopting new
+              trends.
+              <br /> <br />
+              {!isMobileDevice && <br />}
+              <Link to='/about'>Read more about 3MORE {icons.arrowUpRight}</Link>
+              {/* <br />
+            <br />
+            <h5>What do we aim for ?</h5> */}
+            </p>
           </div>
-          <div className='about-info'>
-            {/* <p>
+          <div className='about-main-grid'>
+            <article className='about-main-item'>
+              <div className='about-main-item-icon'>{icons.testing}</div>
+              <h6>Focus on quality, product robustness and longevity</h6>
+            </article>
+
+            <article className='about-main-item'>
+              <div className='about-main-item-icon'>{icons.rupee}</div>
+              <h6>Deliver more value to stakeholders</h6>
+            </article>
+
+            <article className='about-main-item'>
+              <div className='about-main-item-icon'>{icons.shield}</div>
+              <h6>Establish ourselves as a reliable and trusted industry partner</h6>
+            </article>
+          </div>
+
+          {/* <div className='about-info'>
+            <p>
               In Todays Digital Era , We enable our customers to increase their business value
               through the <b>Simplification</b> , <b>Automation</b> and <b>Differentiation</b>. Our
               solutions help customers to improve productivity and enable them for adopting new
               trends.
             </p>
-            <br /> */}
+            <br />
             <h5>What do we aim for ?</h5>
             <CheckList
               checkList={[
@@ -356,7 +395,7 @@ const Landing = () => {
                 'Keep Continual focus on Quality to make profound imact on improving overall application robustness and longevity.',
               ]}
             />
-          </div>
+          </div> */}
         </section>
       </section>
       <section className='digital-offerings-container'>

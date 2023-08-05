@@ -1,15 +1,16 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import icons from '../ui/icons'
 import Button from './Button'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
 import logo from '../assets/images/logo.svg'
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import digitalServices, { DigitalService } from '../data/digitalServices'
 import businessServices, { BusinessService } from '../data/businessServices'
 import { HashLinkWithFragment, isMobile } from '../utils'
 
 const Header = (): JSX.Element => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const location = useLocation()
 
   const isMobileDevice: boolean = isMobile()
 
@@ -23,13 +24,34 @@ const Header = (): JSX.Element => {
 
   return (
     <div className='header-outer-container'>
-      <div className={`header-desktop-container ${!isScrolled && 'no-scroll'}`}>
-        {/* <section className='header-banner'>
-          <small>Explore our digital and business offerings</small>
-          <small>
-            <Link to='#'>Read more</Link>
-          </small>
-        </section> */}
+      <div
+        className={`header-desktop-container ${
+          !isScrolled && location.pathname === '/' && 'no-scroll'
+        } ${isMobileDevice && !isScrolled && 'mobile-border'}`}
+      >
+        <section className='header-banner'>
+          <span className='header-banner-left'>
+            <div className='header-banner-tag'>NEW</div>
+            <small>
+              {isMobileDevice
+                ? 'Application Maintainence - our newest offering'
+                : 'Explore our newly launched offering - Application Maintainence, read more '}
+            </small>
+            {isMobileDevice ? (
+              <small>
+                <Link to='/offerings#application-maintainence'>{icons.arrowRightLong} </Link>
+              </small>
+            ) : (
+              <Fragment>
+                &nbsp;
+                <Link to='/offerings#application-maintainence'>
+                  <small>here</small>
+                  {icons.arrowRightLong}
+                </Link>
+              </Fragment>
+            )}
+          </span>
+        </section>
         <section className='header-main'>
           <section className='header-main-left'>
             <Link to='/'>
@@ -56,9 +78,9 @@ const Header = (): JSX.Element => {
                           <h5>Digital Offerings</h5>
                         </Link>
                         <ul>
-                          {digitalServices.map((service: DigitalService) => (
+                          {digitalServices.map((service: DigitalService, index: number) => (
                             <li>
-                              <HashLinkWithFragment path={'offerings' + service.link}>
+                              <HashLinkWithFragment path={'offerings' + service.link} key={index}>
                                 {service.title.match(
                                   /(?<=<span className="highlight">).*?(?=<\/span>)/,
                                 )?.[0] || ''}{' '}
@@ -73,11 +95,11 @@ const Header = (): JSX.Element => {
                           <h5>Business Offerings</h5>
                         </Link>
                         <ul>
-                          {businessServices.map((service: BusinessService) => (
+                          {businessServices.map((service: BusinessService, index: number) => (
                             <li>
-                              <Link to={service.link}>
+                              <HashLinkWithFragment path={'offerings' + service.link} key={index}>
                                 {service.title} {icons.arrowUpRight}
-                              </Link>
+                              </HashLinkWithFragment>
                             </li>
                           ))}
                         </ul>
@@ -130,14 +152,14 @@ const Header = (): JSX.Element => {
                     </Link>
                     <h6 className='mobile-header-heading'>Digital Offerings</h6>
                     <ul>
-                      {digitalServices.map((service: DigitalService) => (
+                      {digitalServices.map((service: DigitalService, index: number) => (
                         <li>
                           {/* <Link to={service.link}>
                             {service.title.match(
                               /(?<=<span className="highlight">).*?(?=<\/span>)/,
                             )?.[0] || ''}
                           </Link> */}
-                          <HashLinkWithFragment path={'offerings' + service.link}>
+                          <HashLinkWithFragment path={'offerings' + service.link} key={index}>
                             {service.title.match(
                               /(?<=<span className="highlight">).*?(?=<\/span>)/,
                             )?.[0] || ''}
@@ -148,9 +170,11 @@ const Header = (): JSX.Element => {
                     </ul>
                     <h6 className='mobile-header-heading'>Business Offerings</h6>
                     <ul>
-                      {businessServices.map((service: BusinessService) => (
+                      {businessServices.map((service: BusinessService, index: number) => (
                         <li>
-                          <Link to={service.link}>{service.title}</Link>
+                          <HashLinkWithFragment path={'offerings' + service.link} key={index}>
+                            {service.title}
+                          </HashLinkWithFragment>
                         </li>
                       ))}
                     </ul>

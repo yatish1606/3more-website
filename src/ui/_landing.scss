@@ -10,7 +10,7 @@ $business-offerings-art-box-mobile: 2.5rem;
 .banner {
   width: 100%;
   height: calc(100vh);
-  padding-top: $header-height-without-banner;
+  padding-top: $header-height-with-banner;
   background-color: $white;
   background: url('../assets/images/landing-banner-bg.svg');
   background-size: cover;
@@ -29,7 +29,7 @@ $business-offerings-art-box-mobile: 2.5rem;
       display: flex;
       flex-direction: column;
       width: 100%;
-      padding-top: 1rem;
+      padding-top: 2rem;
 
       h1 {
         color: $grey900;
@@ -67,7 +67,7 @@ $business-offerings-art-box-mobile: 2.5rem;
     min-height: 5rem;
     overflow: hidden;
     padding: 1rem 0;
-    height: calc(100vh - $header-height-without-banner - $landing-top-height);
+    height: calc(100vh - $header-height-with-banner - $landing-top-height);
     // background-color: gold;
 
     .carousel-slider {
@@ -109,14 +109,13 @@ $business-offerings-art-box-mobile: 2.5rem;
         position: relative;
         border-radius: $border-radius-lg;
         overflow: hidden;
-        border: 1px solid $grey200;
-        background-color: $grey100;
+        border: 1px solid $grey300;
         height: 100%;
         transition: 250ms ease-out;
 
         &:hover {
-          transform: scale(1.02);
-          transition: 250ms ease-out;
+          transform: scale(1.02) translateY(-0.25rem);
+          transition: transform 300ms ease-out;
         }
 
         .carousel-image {
@@ -126,6 +125,11 @@ $business-offerings-art-box-mobile: 2.5rem;
           overflow: hidden;
           top: 0;
           left: 0;
+          background-color: transparent;
+          backdrop-filter: saturate(2.5) blur(5px) contrast(0.975) brightness(0.975);
+          // box-shadow: inset 0px 0px 0px 1px $grey300;
+          border-radius: $border-radius-lg;
+          position: relative;
 
           .image-overlay {
             position: absolute;
@@ -134,15 +138,51 @@ $business-offerings-art-box-mobile: 2.5rem;
             width: 100%;
             height: 100%;
             z-index: 100;
-            background: radial-gradient(rgba($grey800, 0), rgba($grey800, 0.25));
+            background: radial-gradient(transparent 70%, rgba($grey900, 0.075));
           }
 
           img {
             width: 100%;
-            height: 100%;
+
             object-fit: cover;
             display: block;
             position: relative;
+          }
+        }
+
+        .carousel-video {
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+          backdrop-filter: saturate(2.5) blur(5px) contrast(0.975) brightness(0.975);
+          overflow: hidden;
+          // border: 1px $grey300 inset;
+          // box-shadow: inset 0px 0px 0px 1px $grey300;
+          border-radius: $border-radius-lg;
+          position: relative;
+
+          .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            background: radial-gradient(transparent 80%, rgba($grey800, 0.1));
+          }
+
+          video {
+            position: absolute;
+            border-radius: $border-radius-lg;
+            overflow: hidden;
+            width: calc(100% - 2.5rem);
+            max-height: calc(100% - 2.5rem - 3rem);
+            top: 1.25rem;
+            left: 1.25rem;
+            object-fit: cover;
+            object-position: top center;
+            filter: saturate(1.25);
+            box-shadow: 0 0 1.5rem 4px rgba($color: $grey800, $alpha: 0.15);
           }
         }
 
@@ -152,7 +192,7 @@ $business-offerings-art-box-mobile: 2.5rem;
           left: 1.25rem;
           display: flex;
           align-items: center;
-          background-color: rgba($color: $grey100, $alpha: 1);
+          background-color: rgba($color: $grey800, $alpha: 1);
           backdrop-filter: blur(5px);
           padding: 0.3rem 0.8rem;
           border-radius: 2rem;
@@ -160,11 +200,11 @@ $business-offerings-art-box-mobile: 2.5rem;
           max-width: calc(100% - 3rem);
           overflow: hidden;
           z-index: 101;
-          box-shadow: 0 0 1.5rem 4px rgba($color: $grey800, $alpha: 0.25);
+          box-shadow: 0 0 1rem 3px rgba($color: $grey800, $alpha: 0.1);
 
           small {
             margin: 0;
-            color: $grey800;
+            color: $grey100;
             font-size: 0.8rem;
             display: flex;
             align-items: center;
@@ -177,7 +217,7 @@ $business-offerings-art-box-mobile: 2.5rem;
             svg {
               width: 0.75rem;
               height: 0.75rem;
-              stroke: $grey800;
+              stroke: $grey100;
               position: absolute;
               top: 50%;
               right: 0.3rem;
@@ -203,7 +243,7 @@ $business-offerings-art-box-mobile: 2.5rem;
   display: flex;
   flex-direction: column;
   padding: 2rem $side-padding-desktop;
-  background-color: $grey100;
+  background-color: $white;
   width: 100%;
   border-bottom: 0.4rem solid $orange;
 
@@ -214,83 +254,135 @@ $business-offerings-art-box-mobile: 2.5rem;
     }
   }
 
+  h3 {
+    .grey600 {
+      @extend h3;
+      color: $grey600;
+    }
+  }
+
   .about-main {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     padding: 3rem 0;
+    gap: 3rem;
 
-    .about-art {
+    // .about-art {
+    //   width: 60%;
+    //   display: grid;
+    //   grid-template-columns: repeat(3, 1fr);
+    //   grid-gap: 1rem;
+    //   height: fit-content;
+
+    //   .about-art-item {
+    //     background-color: $grey200;
+    //     aspect-ratio: 1;
+    //     border-radius: $border-radius-lg;
+    //     overflow: hidden;
+
+    //     &:nth-child(3) {
+    //       background-color: transparent;
+    //     }
+
+    //     &:nth-child(5) {
+    //       background-color: transparent;
+    //     }
+
+    //     &:nth-child(6) {
+    //       background-color: $tan;
+    //     }
+
+    //     img {
+    //       width: 100%;
+    //       height: 100%;
+    //       object-fit: cover;
+    //       border-radius: $border-radius-lg;
+    //       border: 1px solid $grey200;
+
+    //       position: relative;
+
+    //       &::before,
+    //       &::after {
+    //         content: '';
+    //         position: absolute;
+    //         top: 0;
+    //         left: 0;
+    //         width: 100%;
+    //         height: 100%;
+    //       }
+
+    //       &::before {
+    //         background: radial-gradient(
+    //           ellipse at center,
+    //           rgba(0, 0, 0, 0) 0%,
+    //           rgba(0, 0, 0, 1) 100%
+    //         );
+    //       }
+
+    //       &::after {
+    //         background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    //       }
+    //     }
+    //   }
+
+    //   img {
+    //     width: 100%;
+    //     height: 100%;
+    //     object-fit: cover;
+    //     border-radius: $border-radius-lg;
+    //   }
+    // }
+
+    // .about-info {
+    //   display: flex;
+    //   flex: 1;
+    //   flex-direction: column;
+    //   margin-left: 4rem;
+    // }
+
+    .about-title {
       width: 50%;
-      // display: grid;
-      // grid-template-columns: repeat(3, 1fr);
-      // grid-gap: 1rem;
-      height: fit-content;
-
-      .about-art-item {
-        background-color: $grey200;
-        aspect-ratio: 1;
-        border-radius: $border-radius-lg;
-        overflow: hidden;
-
-        &:nth-child(3) {
-          background-color: transparent;
-        }
-
-        &:nth-child(5) {
-          background-color: transparent;
-        }
-
-        &:nth-child(6) {
-          background-color: $tan;
-        }
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: $border-radius-lg;
-          border: 1px solid $grey200;
-
-          position: relative;
-
-          &::before,
-          &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          }
-
-          &::before {
-            background: radial-gradient(
-              ellipse at center,
-              rgba(0, 0, 0, 0) 0%,
-              rgba(0, 0, 0, 1) 100%
-            );
-          }
-
-          &::after {
-            background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-          }
-        }
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: $border-radius-lg;
-      }
+      padding: 1.5rem 2rem;
+      background: url('../assets/images//landing-banner-bg.svg');
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      border-radius: $border-radius-lg;
+      border: 1px solid $grey300;
+      backdrop-filter: blur(5px) saturate(1.2);
     }
 
-    .about-info {
-      display: flex;
+    .about-main-grid {
       flex: 1;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 3rem;
+      padding: 2rem 0;
+    }
+
+    .about-main-item {
+      display: flex;
       flex-direction: column;
-      margin-left: 4rem;
+
+      .about-main-item-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: $border-radius-lg;
+        border: 1px solid $grey300;
+        backdrop-filter: blur(5px) saturate(1.2);
+        background: url('../assets/images//landing-banner-bg.svg');
+        background-size: cover;
+        margin-bottom: 0.5rem;
+
+        svg {
+          width: 1.4rem;
+          height: 1.4rem;
+          stroke: $grey800;
+        }
+      }
     }
   }
 }
@@ -436,7 +528,7 @@ $business-offerings-art-box-mobile: 2.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: darkcyan;
+            background-color: transparent;
             aspect-ratio: 1;
             margin-bottom: $business-offerings-art-box / 2;
             overflow: hidden;
@@ -498,7 +590,7 @@ $business-offerings-art-box-mobile: 2.5rem;
       width: 100%;
       // background-color: honeydew;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       grid-gap: 2rem;
       margin: 1rem 0;
       margin-top: 1.5rem;
@@ -554,6 +646,11 @@ $business-offerings-art-box-mobile: 2.5rem;
           // background-color: $grey800;
           border: 1px solid $grey300;
           margin-bottom: 1.5rem;
+          border-radius: $border-radius-lg;
+          border: 1px solid $grey300;
+          backdrop-filter: blur(5px) saturate(1.2);
+          background: url('../assets/images//landing-banner-bg.svg');
+          background-size: cover;
 
           svg {
             width: 1.25rem;
@@ -568,6 +665,7 @@ $business-offerings-art-box-mobile: 2.5rem;
 
           h6 {
             margin-top: 0;
+            font-size: 1.1rem;
           }
         }
       }
@@ -588,7 +686,7 @@ $business-offerings-art-box-mobile: 2.5rem;
     position: sticky;
     z-index: 50;
 
-    top: $header-height-without-banner;
+    top: $header-height-with-banner;
     // bottom: 50vh;
     padding: 1rem 0;
     background-color: $white;
@@ -865,7 +963,8 @@ $business-offerings-art-box-mobile: 2.5rem;
       display: flex;
       flex-direction: column;
       height: calc(100svh);
-      padding-bottom: 3rem;
+      padding-bottom: 1rem;
+
       background-image: url('../assets/images/landing-banner-bg-mobile.svg');
 
       .banner-strip {
@@ -880,7 +979,7 @@ $business-offerings-art-box-mobile: 2.5rem;
         align-items: unset;
 
         .landing-top-title {
-          padding-top: 0;
+          padding-top: 1rem;
         }
       }
       .mobile-carousel {
@@ -896,7 +995,9 @@ $business-offerings-art-box-mobile: 2.5rem;
         .mobile-carousel-item {
           width: calc(100vw - 6 * $side-padding-mobile);
           height: 100%;
-          background-color: darkcyan;
+          background-color: transparent;
+          border: 1px solid $grey300;
+          // backdrop-filter: saturate(150%) blur(2px) contrast(1);
           border-radius: $border-radius-lg;
           margin-right: $side-padding-mobile;
           overflow: hidden;
@@ -910,11 +1011,52 @@ $business-offerings-art-box-mobile: 2.5rem;
             overflow: hidden;
             top: 0;
             left: 0;
+            background-color: transparent;
+            backdrop-filter: saturate(2.5) blur(5px) contrast(0.975) brightness(0.975);
+            // box-shadow: inset 0px 0px 0px 1px $grey300;
+            border-radius: $border-radius-lg;
+            position: relative;
 
             img {
               width: 100%;
               height: 100%;
               object-fit: cover;
+            }
+          }
+
+          .mobile-carousel-video {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            backdrop-filter: saturate(2.5) blur(5px) contrast(0.975) brightness(0.975);
+            overflow: hidden;
+            // border: 1px $grey300 inset;
+            // box-shadow: inset 0px 0px 0px 1px $grey300;
+            border-radius: $border-radius-lg;
+            position: relative;
+
+            .image-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 100;
+              background: radial-gradient(transparent 80%, rgba($grey800, 0.1));
+            }
+
+            video {
+              position: absolute;
+              border-radius: $border-radius-lg;
+              overflow: hidden;
+              width: calc(100% - 2.5rem);
+              height: calc(100% - 2.5rem - 3rem);
+              top: 1.25rem;
+              left: 1.25rem;
+              object-fit: cover;
+              object-position: top center;
+              filter: saturate(1.25);
+              box-shadow: 0 0 1.5rem 4px rgba($color: $grey800, $alpha: 0.15);
             }
           }
 
@@ -924,7 +1066,7 @@ $business-offerings-art-box-mobile: 2.5rem;
             left: 1.25rem;
             display: flex;
             align-items: center;
-            background-color: rgba($color: $grey100, $alpha: 1);
+            background-color: rgba($color: $grey800, $alpha: 1);
             backdrop-filter: blur(5px);
             padding: 0.3rem 0.8rem;
             border-radius: 2rem;
@@ -936,7 +1078,7 @@ $business-offerings-art-box-mobile: 2.5rem;
 
             small {
               margin: 0;
-              color: $grey800;
+              color: $grey100;
               font-size: 0.85rem;
               display: flex;
               align-items: center;
@@ -949,7 +1091,7 @@ $business-offerings-art-box-mobile: 2.5rem;
               svg {
                 width: 0.75rem;
                 height: 0.75rem;
-                stroke: $grey800;
+                stroke: $grey100;
                 position: absolute;
                 top: 50%;
                 right: 0.3rem;
@@ -976,6 +1118,18 @@ $business-offerings-art-box-mobile: 2.5rem;
       flex-direction: column;
       justify-content: flex-start;
       padding: 1rem 0;
+      padding-top: 0;
+
+      .about-title {
+        width: 100%;
+        padding: 1.5rem;
+      }
+
+      .about-main-grid {
+        padding-top: 0rem;
+        grid-gap: 1.5rem;
+        padding: 0 0.25rem;
+      }
 
       .about-art {
         width: 100%;
@@ -1260,6 +1414,11 @@ $business-offerings-art-box-mobile: 2.5rem;
             justify-content: center;
             // background-color: $grey800;
             margin-bottom: 1rem;
+            border-radius: $border-radius-lg;
+            border: 1px solid $grey300;
+            backdrop-filter: blur(5px) saturate(1.2);
+            background: url('../assets/images//landing-banner-bg.svg');
+            background-size: cover;
 
             svg {
               width: 0.9rem;
@@ -1303,7 +1462,7 @@ $business-offerings-art-box-mobile: 2.5rem;
       position: sticky;
       z-index: 50;
 
-      top: $header-height-without-banner;
+      top: $header-height-with-banner;
       // bottom: 50vh;
       padding: 1rem 0;
       background-color: $white;

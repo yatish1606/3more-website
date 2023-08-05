@@ -50,7 +50,7 @@ const Offerings = () => {
 const DigitalOfferingItem = ({ service, index }: { service: DigitalService; index: number }) => {
   const bullets = service.longDescription.split('.').slice(0, -1)
   return (
-    <article className='digital-offerings-main-item' id={service.link.replace('#', '')}>
+    <article className='digital-offerings-main-item' id={service.link.replace('#', '')} key={index}>
       <section className='offerings-main-item-info'>
         <h4
           dangerouslySetInnerHTML={{
@@ -68,14 +68,13 @@ const DigitalOfferingItem = ({ service, index }: { service: DigitalService; inde
 }
 
 const BusinessOfferingItem = ({ service, index }: { service: BusinessService; index: number }) => {
-  const bullets = service.longDescription.split('.').slice(0, -1)
   const isMobileDevice = isMobile()
   return (
-    <article className='offerings-main-item' id={service.link.replace('#', '')}>
+    <article className='offerings-main-item' id={service.link.replace('#', '')} key={index}>
       <section className='offerings-main-item-image'>
         <img src={service.image} alt={service.title} />
-        {/* <div className='offerings-main-item-image-overlay'></div>
-         */}
+        <div className='offerings-main-item-image-overlay'></div>
+
         {service.projectInfo && (
           <HashLinkWithFragment path={service.projectInfo.link}>
             <div className='business-offering-link-project'>{icons.arrowUpRight}</div>

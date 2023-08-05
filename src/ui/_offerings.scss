@@ -1,7 +1,6 @@
 .offerings-container {
   width: 100%;
   min-height: 100vh;
-  background-color: $white;
   padding: 0 0 2rem 0;
   display: flex;
   flex-direction: column;
@@ -11,7 +10,8 @@
     display: flex;
     flex-direction: column;
     background-color: $white;
-    padding: $header-height-with-banner $side-padding-desktop 3rem $side-padding-desktop;
+    padding: calc($header-height-with-banner + 2rem) $side-padding-desktop 3rem
+      $side-padding-desktop;
   }
 
   .offerings-main-container {
@@ -156,10 +156,10 @@
         transition: 250ms ease-out;
         .offerings-main-item-image {
           .business-offering-link-project {
-            background-color: $grey800;
+            background-color: $grey200;
 
             svg {
-              stroke: $white;
+              stroke: $grey800;
             }
           }
         }
@@ -212,10 +212,13 @@
 
         .offerings-main-item-image-overlay {
           position: absolute;
+          top: 0;
+          left: 0;
           width: 100%;
           height: 100%;
-          z-index: 100;
-          background: linear-gradient(to top, rgba($white, 1), rgba($white, 0) 50%);
+          z-index: 33;
+
+          background: radial-gradient(rgba($grey800, 0) 60%, rgba($grey700, 0.12));
         }
 
         .business-offering-link-project {
@@ -224,8 +227,8 @@
           right: 1rem;
           width: 2.25rem;
           height: 2.25rem;
-          border: 1px solid $grey700;
-          background-color: $white;
+          border: 1px solid $grey800;
+          background-color: $grey800;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -235,7 +238,7 @@
           overflow: hidden;
 
           svg {
-            stroke: $grey700;
+            stroke: $grey200;
             width: 1rem;
             stroke-width: 1.5px;
             height: 1rem;
@@ -266,7 +269,7 @@
   }
 
   .offerings-header {
-    padding: $header-height-with-banner $side-padding-mobile 3rem $side-padding-mobile !important;
+    padding: calc($header-height-with-banner + 2rem) $side-padding-mobile 3rem $side-padding-mobile !important;
   }
 
   .offerings-main-container {

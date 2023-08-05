@@ -3,6 +3,7 @@ import eCommerce from '../assets/images/e-commerce.jpg'
 import cloudMigration from '../assets/images/cloud-migration.jpg'
 import mobileDevelopment from '../assets/images/mobile-development.jpg'
 import { DigitalService } from './digitalServices'
+import ptwikki from '../assets/images/ptwikki.svg'
 import icons from '../ui/icons'
 
 interface BusinessService extends DigitalService {
@@ -26,7 +27,7 @@ const businessServices: Array<BusinessService> = [
     title: 'Webapp Development',
     shortDescription: `Tailored mobile and web apps for your business needs, from design to ongoing support & complete app development lifecycle`,
     longDescription: `We create, design and build mobile and web applications tailored to meet the specific needs of a business. These services encompass the entire app development lifecycle, from conceptualization, design to coding, testing, deployment and ongoing maintenance and support. We work closely with business to understand their business requirements, convert them to technical specifications and leverage latest technology/tools/frameworks/methods to develop clean and efficient code, ensuring scalability and performance.`,
-    image: cloudMigration,
+    image: ptwikki,
     link: '#webapp-development',
     icon: icons.code,
     category: 'Engineering',

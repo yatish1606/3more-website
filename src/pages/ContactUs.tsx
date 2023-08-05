@@ -4,6 +4,12 @@ import { helpList } from '../data/contact'
 import icons from '../ui/icons'
 import Button from '../components/Button'
 import { Link } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
+import {
+  EMAIL_JS_CONTACT_FORM_SERVICE_ID,
+  EMAIL_JS_CONTACT_FORM_TEMPLATE_ID,
+  EMAIL_JS_PUBLIC_KEY,
+} from '../env'
 
 const ContactUs = (): JSX.Element => {
   const nameRef = useRef<HTMLInputElement>(null)
@@ -47,8 +53,36 @@ const ContactUs = (): JSX.Element => {
     setSelectedOption(event.target.value)
   }
 
+  const formDataToRecord = (formData: FormData): Record<string, unknown> => {
+    const result: Record<string, unknown> = {}
+
+    formData.forEach((value, key) => {
+      result[key] = value
+    })
+
+    return result
+  }
+
   const onFormSubmit = (event: FormEvent) => {
     event.preventDefault()
+    const formData: FormData = new FormData()
+    formData.set('name', nameRef.current?.value.trim() || '')
+    formData.set('email', emailRef.current?.value.trim() || '')
+    formData.set('helpYouWith', selectedOption)
+    formData.set('message', messageRef.current?.value.trim() || 'No message')
+
+    emailjs
+      .send(
+        EMAIL_JS_CONTACT_FORM_SERVICE_ID,
+        EMAIL_JS_CONTACT_FORM_TEMPLATE_ID,
+        formDataToRecord(formData),
+        EMAIL_JS_PUBLIC_KEY,
+      )
+      .then(() => {
+        alert('Form submitted successfully')
+      })
+      .catch(() => alert('Could not submit form. Please try after some time'))
+      .finally(() => {})
   }
 
   return (

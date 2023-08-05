@@ -1,4 +1,9 @@
 import App from './App'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const element = document.getElementById('root')
+if (!element) {
+  throw new Error('No app available !')
+}
+const root = createRoot(element)
+root.render(<App />)
