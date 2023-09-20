@@ -1,5 +1,4 @@
 import { useRef, useState, FormEvent, ChangeEvent } from 'react'
-import Select from 'react-select'
 import { helpList } from '../data/contact'
 import icons from '../ui/icons'
 import Button from '../components/Button'
@@ -14,8 +13,9 @@ import {
 const ContactUs = (): JSX.Element => {
   const nameRef = useRef<HTMLInputElement>(null)
   const emailRef = useRef<HTMLInputElement>(null)
+  const phoneRef = useRef<HTMLInputElement>(null)
   const messageRef = useRef<HTMLTextAreaElement>(null)
-  const [selectedOption, setSelectedOption] = useState<string>('')
+  const [selectedOption, setSelectedOption] = useState<string>(helpList[0])
   const options = helpList.map(item => {
     return {
       label: item,
@@ -68,6 +68,7 @@ const ContactUs = (): JSX.Element => {
     const formData: FormData = new FormData()
     formData.set('name', nameRef.current?.value.trim() || '')
     formData.set('email', emailRef.current?.value.trim() || '')
+    formData.set('phone', phoneRef.current?.value.trim() || '')
     formData.set('helpYouWith', selectedOption)
     formData.set('message', messageRef.current?.value.trim() || 'No message')
 
@@ -138,6 +139,17 @@ const ContactUs = (): JSX.Element => {
             </select>
           </div>
           <div className='form-field'>
+            <label htmlFor='email'>Phone number</label>
+            <input
+              ref={phoneRef}
+              type='tel'
+              placeholder='Enter your phone number with country code'
+              id='phone'
+              name='phone'
+              required
+            />
+          </div>
+          <div className='form-field'>
             <label htmlFor='message'>
               Your Message <span className='subtext'>(optional)</span>
             </label>
@@ -153,14 +165,14 @@ const ContactUs = (): JSX.Element => {
           <small>We usually respond within 3 - 4 business days</small>
         </form>
         <div className='contact-us-links'>
-          <h6>Useful Links</h6>
+          <h5>Useful Links</h5>
 
           <Link to='/about'>About Us {icons.arrowUpRight}</Link>
-          <Link to='/about#faq'>FAQs {icons.arrowUpRight}</Link>
-          <Link to='/about'>About Us {icons.arrowUpRight}</Link>
+          <Link to='/portfolio'>Our project portfolio {icons.arrowUpRight}</Link>
+          <Link to='/offerings'>Our offerings {icons.arrowUpRight}</Link>
 
           <br />
-          <h6>Reach out</h6>
+          <h5>Reach out</h5>
           <Link to='mailto:info@3more-tech.com'>info@3more-tech.com</Link>
 
           <Link to='tel:+91 9881404657'> +91 9881404657</Link>

@@ -1,17 +1,12 @@
-import eCommerce from '../assets/images/e-commerce.jpg'
 import cloudMigration from '../assets/images/cloud-migration.jpg'
-import mobileDevelopment from '../assets/images/mobile-development.jpg'
 import planningImage from '../assets/images/planning.jpg'
-import meetingImage from '../assets/images/meeting.jpg'
 import webdevImage from '../assets/images/webdev.jpg'
-import uxImage from '../assets/images/ux.jpg'
 import consultationImage from '../assets/images/consultation.jpg'
 import finaqaImage from '../assets/images/finaqa.svg'
 import ptwikki from '../assets/images/ptwikki-landing.svg'
 import hrwikkiVideo from '../assets/videos/hrwikki_video.mp4'
 import consultingVideo from '../assets/videos/consulting_video.mp4'
 import staffingVideo from '../assets/videos/staffing_video.mp4'
-import { isMobile } from '../utils'
 
 export { landingCarouselItems, landingCarouselItemsMobile }
 export type { LandingCarouselItem }

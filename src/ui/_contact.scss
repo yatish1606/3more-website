@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 100vh;
   padding: 2rem $side-padding-desktop;
-  padding-top: $header-height-without-banner + 2rem;
+  padding-top: $header-height-with-banner + 2rem;
 
   .contact-us-info {
     width: 100%;
@@ -45,7 +45,7 @@
     width: 100%;
     min-height: 100vh;
     padding: 2rem $side-padding-mobile;
-    padding-top: $header-height-without-banner + 2rem;
+    padding-top: $header-height-with-banner + 2rem;
 
     .contact-us-info {
       width: 100%;

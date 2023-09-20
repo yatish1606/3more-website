@@ -21,13 +21,18 @@ const Offerings = () => {
     <div className='offerings-container'>
       <section className='offerings-header'>
         <small className='tag'>Offerings</small>
-        <h1>Digital and Business services that accelerate your growth</h1>
+        <h1>
+          Digital and Business services that{' '}
+          <span className='lower-highlight'>accelerate your growth</span>
+        </h1>
         <br />
         <p>Need a more in-depth information ? Drop your mail and we'll get back to you.</p>
+        <br />
         <InlineEmailForm />
+        <br />
       </section>
       <section className='offerings-main-container business-offerings-main-container'>
-        <h2>Crafting business solutions that help you with ...</h2>
+        <h2>We craft business solutions that help you with ...</h2>
         <br />
         <div className='offerings-main-grid'>
           {businessServices.map((service: BusinessService, index: number) => {
@@ -35,14 +40,14 @@ const Offerings = () => {
           })}
         </div>
       </section>
-      <section className='offerings-main-container'>
+      {/* <section className='offerings-main-container'>
         <h2>Cutting edge digital solutions</h2>
         <div className='offerings-main-grid'>
           {digitalServices.map((service: DigitalService, index: number) => {
             return <DigitalOfferingItem service={service} key={index} index={index} />
           })}
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

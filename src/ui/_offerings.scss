@@ -1,15 +1,17 @@
 .offerings-container {
   width: 100%;
   min-height: 100vh;
-  padding: 0 0 2rem 0;
+  padding: 0 0 0 0;
   display: flex;
   flex-direction: column;
+  background: url('../assets/images/landing-banner-bg.svg');
+  background-size: 100% auto;
 
   .offerings-header {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: $white;
+    // background-color: $white;
     padding: calc($header-height-with-banner + 2rem) $side-padding-desktop 3rem
       $side-padding-desktop;
   }
@@ -19,6 +21,7 @@
     display: flex;
     flex-direction: column;
     padding: 2rem $side-padding-desktop;
+    background-color: $grey100;
 
     .offerings-main-grid {
       width: 100%;
@@ -80,7 +83,7 @@
   }
 
   .business-offerings-main-container {
-    background-color: $grey200;
+    background-color: $white;
     .offerings-main-grid {
       width: 100%;
       display: grid;
@@ -100,6 +103,7 @@
       overflow: hidden;
       margin: 0;
       transition: 250ms ease-out;
+      box-shadow: rgba($grey500, 0.2) 0px 2px 8px 0px;
 
       &:first-child {
         grid-column-start: 1;
@@ -153,10 +157,10 @@
 
       &:hover {
         transform: translateY(-0.25rem) scale(1.005);
-        transition: 250ms ease-out;
+        transition: 150ms ease-in-out;
         .offerings-main-item-image {
           .business-offering-link-project {
-            background-color: $grey200;
+            background-color: $grey100;
 
             svg {
               stroke: $grey800;
@@ -173,6 +177,7 @@
 
         small.orange {
           color: $orangeDark;
+          filter: contrast(1.25);
         }
 
         p {
@@ -204,21 +209,27 @@
         aspect-ratio: unset;
         overflow: hidden;
         flex: unset;
-        background-color: $grey100;
+        // background-color: $grey100;
         display: flex;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         position: relative;
 
+        backdrop-filter: blur(2px) saturate(1.4) contrast(1.1);
+        background: url('../assets/images/landing-banner-bg.svg');
+        background-size: cover;
+        padding: 1rem;
+        padding-bottom: 0;
+
         .offerings-main-item-image-overlay {
           position: absolute;
           top: 0;
           left: 0;
-          width: 100%;
+          // width: 100%;
           height: 100%;
           z-index: 33;
 
-          background: radial-gradient(rgba($grey800, 0) 60%, rgba($grey700, 0.12));
+          background: radial-gradient(rgba($grey700, 0) 50%, rgba($grey700, 0.12));
         }
 
         .business-offering-link-project {
@@ -250,12 +261,16 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border-radius: $border-radius-lg;
         }
       }
     }
   }
 }
 @media only screen and (max-width: 620px) {
+  .offerings-container {
+    background: url('../assets/images/landing-banner-bg-mobile.svg');
+  }
   .offerings-container .offerings-header .inline-form {
     width: 100%;
     display: flex;

@@ -93,6 +93,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 $side-padding-desktop;
+    backdrop-filter: blur(2px) saturate(1.5) contrast(1);
 
     .header-banner-left {
       display: flex;

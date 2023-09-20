@@ -1,6 +1,6 @@
 .footer-container {
   width: 100%;
-  background-color: $grey900;
+  background-color: $grey200;
   display: flex;
   flex-direction: column;
   padding: 2rem $side-padding-desktop;
@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid $grey700;
+    border-bottom: 1px solid $grey300;
     padding-bottom: 2rem;
 
     .footer-left {
@@ -22,7 +22,7 @@
         align-items: center;
 
         a {
-          color: $grey300;
+          color: $grey800;
           font-family: $body;
           font-size: 1rem;
           margin-right: 1rem;
@@ -32,7 +32,7 @@
             content: '';
             width: 0.4rem;
             height: 0.4rem;
-            background-color: $grey600;
+            background-color: $grey300;
             margin-left: 1rem;
             border-radius: 50%;
           }
@@ -58,7 +58,7 @@
         overflow: hidden;
         margin-left: 0.75rem;
         padding: 0.5rem;
-        border: 1.5px solid $grey600;
+        border: 1.5px solid $grey300;
 
         img {
           //   width: 100%;
@@ -79,7 +79,7 @@
 
       a {
         display: unset;
-        color: $grey400;
+        color: $grey700;
       }
     }
   }
@@ -88,7 +88,7 @@
 @media screen and (max-width: 720px) {
   .footer-container {
     width: 100%;
-    background-color: $grey900;
+    background-color: $grey100;
     display: flex;
     flex-direction: column;
     padding: 2rem $side-padding-mobile;
@@ -99,7 +99,7 @@
       align-items: flex-start;
       justify-content: flex-start;
       flex-direction: column;
-      border-bottom: 1px solid $grey700;
+      border-bottom: 1px solid $grey300;
       padding-bottom: 1.5rem;
 
       .footer-left {
@@ -112,7 +112,7 @@
           flex-direction: column;
 
           a {
-            color: $grey300;
+            color: $grey800;
             font-family: $body;
             font-size: 1rem;
             margin-right: 1rem;
@@ -123,7 +123,7 @@
               display: none;
               width: 0.4rem;
               height: 0.4rem;
-              background-color: $grey600;
+              background-color: $grey300;
               margin-left: 1rem;
               border-radius: 50%;
             }
@@ -149,7 +149,7 @@
           justify-content: center;
           overflow: hidden;
           padding: 0.5rem;
-          border: 1.5px solid $grey600;
+          border: 1.5px solid $grey300;
 
           &:first-child {
             margin-left: 0;
@@ -174,7 +174,7 @@
         width: 100%;
         a {
           display: unset;
-          color: $grey400;
+          color: $grey700;
         }
       }
     }

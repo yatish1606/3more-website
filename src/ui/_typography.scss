@@ -194,7 +194,7 @@ a:not(.no-default-a) {
 }
 
 small {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-family: $body;
   line-height: 1.7;
   letter-spacing: 0.4px;
@@ -247,4 +247,10 @@ b {
   p {
     font-size: 4vw;
   }
+}
+
+h1 .lower-highlight {
+  @extend h1;
+  color: inherit;
+  border-bottom: 0.4rem solid $orange;
 }

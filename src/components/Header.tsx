@@ -26,7 +26,7 @@ const Header = (): JSX.Element => {
     <div className='header-outer-container'>
       <div
         className={`header-desktop-container ${
-          !isScrolled && location.pathname === '/' && 'no-scroll'
+          !isScrolled && location.pathname !== '/contact' && 'no-scroll'
         } ${isMobileDevice && !isScrolled && 'mobile-border'}`}
       >
         <section className='header-banner'>
@@ -35,19 +35,19 @@ const Header = (): JSX.Element => {
             <small>
               {isMobileDevice
                 ? 'Application Maintainence - our newest offering'
-                : 'Explore our newly launched offering - Application Maintainence, read more '}
+                : 'Explore our newly launched offering - Cloud Migration, read more '}
             </small>
             {isMobileDevice ? (
               <small>
-                <Link to='/offerings#application-maintainence'>{icons.arrowRightLong} </Link>
+                <Link to='/offerings#cloud-migration'>{icons.arrowRightLong} </Link>
               </small>
             ) : (
               <Fragment>
                 &nbsp;
-                <Link to='/offerings#application-maintainence'>
+                <HashLinkWithFragment path='offerings#cloud-migration'>
                   <small>here</small>
                   {icons.arrowRightLong}
-                </Link>
+                </HashLinkWithFragment>
               </Fragment>
             )}
           </span>
@@ -144,7 +144,10 @@ const Header = (): JSX.Element => {
                     <Link to='#'>Menu</Link>
                   </NavigationMenu.Trigger>
                   <NavigationMenu.Content className='nav-content mobile-content'>
-                    <Link className='mobile-header-heading' to='#'>
+                    <Link className='mobile-header-heading' to='/contact'>
+                      Contact Us {icons.arrowUpRight}
+                    </Link>
+                    <Link className='mobile-header-heading' to='/portfolio'>
                       Portfolio {icons.arrowUpRight}
                     </Link>
                     <Link className='mobile-header-heading' to='/about'>

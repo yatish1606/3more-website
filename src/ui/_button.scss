@@ -20,6 +20,10 @@ button {
     background-color: $grey800;
     color: $grey100;
     border-color: $grey800;
+
+    svg {
+      stroke: $grey100;
+    }
   }
 
   &.secondary {

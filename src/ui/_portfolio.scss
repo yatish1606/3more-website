@@ -1,7 +1,7 @@
 .portfolio-container {
   width: 100%;
   min-height: 200vh;
-  padding-top: calc($header-height-with-banner);
+
   position: relative;
 
   .portfolio-header {
@@ -9,6 +9,10 @@
     padding: 2rem $side-padding-desktop;
     display: flex;
     flex-direction: column;
+    padding-top: calc($header-height-with-banner + 2rem);
+
+    background: url('../assets/images/landing-banner-bg.svg');
+    background-size: 100% auto;
   }
 
   .portfolio-floating-menu {
@@ -89,10 +93,152 @@
       min-height: 50vh;
       padding: 2rem $side-padding-desktop;
 
-      .project-info {
+      &:nth-child(even) {
+        .project-main {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .project-header {
+        margin-top: 1rem;
         small.orange {
           color: $orangeDark;
         }
+      }
+
+      .project-main {
+        width: 100%;
+        display: flex;
+        gap: 3rem;
+        padding-top: 2rem;
+      }
+
+      .project-image {
+        width: 50%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+
+        .project-image-main {
+          background: url('../assets/images/landing-banner-bg.svg');
+          backdrop-filter: blur(2px) saturate(1.2);
+          width: 100%;
+          background-size: cover;
+          border: 1px solid $grey300;
+          border-radius: $border-radius-lg;
+          overflow-y: hidden;
+
+          min-height: 50vh;
+          width: 100%;
+          backdrop-filter: saturate(1.5) blur(5px) contrast(0.975) brightness(0.975);
+          // overflow-x: hidden;
+
+          .project-image-slide {
+            // background-color: red;
+            // width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+
+            img,
+            video {
+              width: 100%;
+              border-radius: $border-radius-lg;
+              overflow: hidden;
+              object-fit: cover;
+
+              // box-shadow: 0 0 1.5rem 4px rgba($color: $grey700, $alpha: 0.12);
+            }
+          }
+        }
+
+        .project-image-thumbnail {
+          // background-color: gray;
+          display: flex;
+          gap: 1rem;
+          padding: 0.5rem 0.25rem;
+
+          .use-spring-carousel-thumbs-wrapper {
+            overflow-y: auto !important;
+          }
+
+          .project-image-thumb-slide {
+            // background-color: red;
+            height: 4.5rem;
+            aspect-ratio: 1 / 0.7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border: 1px solid $grey300;
+            cursor: pointer;
+            border-radius: $border-radius-lg;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+
+            &:hover {
+              box-shadow: rgba($grey800, 0.2) 0px 0px 0px 2.5px;
+            }
+
+            img,
+            video {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .project-info {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &.projects-container-without-image {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      padding: 2rem $side-padding-desktop;
+
+      .project-container {
+        border: 1px solid $grey200;
+        border-radius: $border-radius-lg;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .portfolio-container {
+    .portfolio-header {
+      background-image: url('../assets/images/landing-banner-bg-mobile.svg');
+    }
+
+    .projects-container {
+      .project-container {
+        &:nth-child(even) {
+          .project-main {
+            flex-direction: column;
+          }
+        }
+        .project-main {
+          flex-direction: column;
+
+          .project-image {
+            width: 100%;
+
+            .project-image-main {
+              min-height: unset;
+            }
+          }
+        }
+      }
+
+      &.projects-container-without-image {
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   }

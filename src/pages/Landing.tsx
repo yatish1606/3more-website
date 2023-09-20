@@ -8,19 +8,12 @@ import {
 } from '../data/landingCarousel'
 import { Link } from 'react-router-dom'
 import { List, CheckList } from '../components/CheckList'
-import demoImage from '../assets/images/demo.jpg'
 import digitalServices, { DigitalService } from '../data/digitalServices'
 import { useSpringCarousel, useTransitionCarousel } from 'react-spring-carousel'
 import businessOfferingArtList, { BusinessOfferingArtItem } from '../data/businessServicesArt'
 import businessServices, { BusinessService } from '../data/businessServices'
-import pictureGallery from '../assets/images/picture-gallery-landing.svg'
 import finaQAImage from '../assets/images/finaqua.png'
-import meetingImage from '../assets/images/meeting.jpg'
-import workImage from '../assets/images/work.jpg'
-import webdevImage from '../assets/images/webdev.jpg'
-import uxImage from '../assets/images/ux.jpg'
 import testimonials, { Testimonial } from '../data/testimonial'
-import graphImage from '../assets/images/graph.jpg'
 import { HashLinkWithFragment, isMobile } from '../utils'
 import InlineEmailForm from '../components/InlineEmailForm'
 
@@ -145,7 +138,9 @@ const Landing = () => {
       id: index + '',
       renderItem: (
         <div className='testimonial-item' key={index}>
-          <h5>{item.review}</h5>
+          <blockquote>
+            <h5>{item.review}</h5>
+          </blockquote>
           <div className='testimonial-info'>
             <div className='author-photo'>
               {item.authorPhoto ? (
@@ -163,7 +158,9 @@ const Landing = () => {
               )}
             </div>
             <div className='author-info'>
-              <h6>{item.author}</h6>
+              <cite>
+                <h6>{item.author}</h6>
+              </cite>
               <small>
                 {item.authorRole}
                 {item.authorWorkplace ? ' at ' + item.authorWorkplace : null}
@@ -192,14 +189,6 @@ const Landing = () => {
       delay: 20,
       duration: 140,
     },
-    // 4: {
-    //   delay: 0,
-    //   duration: 125,
-    // },
-    // 5: {
-    //   delay: 50,
-    //   duration: 220,
-    // },
   }
 
   const handleScroll = (targetRef: MutableRefObject<HTMLDivElement | null>) => {
@@ -242,8 +231,6 @@ const Landing = () => {
     })
   }, [])
 
-  // small is 504
-
   return (
     <div className='landing-container'>
       <section className='banner'>
@@ -270,20 +257,7 @@ const Landing = () => {
                 services to solve business problems.
               </p>
             )}
-            {/* <br />
-            <p>
-              At 3MORE, we work hard with passion and integrity to help you take your business to
-              the next level.
-            </p> */}
           </div>
-          {/* <div className='landing-top-info'>
-            <CheckList
-              checkList={[
-                'Reliable company with over 15 years of software experience',
-                'Over 20 projects successfully delivered',
-              ]}
-            />
-          </div> */}
         </section>
         {isMobileDevice ? (
           <div className='mobile-carousel'>
@@ -344,10 +318,6 @@ const Landing = () => {
         <section className='about-main'>
           <div className='about-title'>
             <p>
-              {/* <span className='grey600'>
-              We enable our customers to increase their business value through simplification,
-              automation and differentiation.
-            </span>{' '} */}
               <h2>
                 Simplification. <br /> Automation. <br /> Differentiation.
               </h2>
@@ -357,9 +327,6 @@ const Landing = () => {
               <br /> <br />
               {!isMobileDevice && <br />}
               <Link to='/about'>Read more about 3MORE {icons.arrowUpRight}</Link>
-              {/* <br />
-            <br />
-            <h5>What do we aim for ?</h5> */}
             </p>
           </div>
           <div className='about-main-grid'>
@@ -378,24 +345,6 @@ const Landing = () => {
               <h6>Establish ourselves as a reliable and trusted industry partner</h6>
             </article>
           </div>
-
-          {/* <div className='about-info'>
-            <p>
-              In Todays Digital Era , We enable our customers to increase their business value
-              through the <b>Simplification</b> , <b>Automation</b> and <b>Differentiation</b>. Our
-              solutions help customers to improve productivity and enable them for adopting new
-              trends.
-            </p>
-            <br />
-            <h5>What do we aim for ?</h5>
-            <CheckList
-              checkList={[
-                'Delivering more value to stakeholders',
-                'Establish ourselves as a reliable and trusted partner in the industry',
-                'Keep Continual focus on Quality to make profound imact on improving overall application robustness and longevity.',
-              ]}
-            />
-          </div> */}
         </section>
       </section>
       <section className='digital-offerings-container'>
@@ -500,50 +449,6 @@ const Landing = () => {
                 )
               })}
           </section>
-          {/* <br />
-          <h5 className='highlight'>Testing and Security</h5>
-          <section className='business-services-grid'>
-            {businessServices
-              .filter((service: BusinessService) => service.category === 'Testing')
-              .map((service: BusinessService, index: number) => {
-                return (
-                  <article key={index} className='business-services-item'>
-                    <div className='business-serives-item-main'>
-                      <div className='business-services-item-icon'>{service.icon}</div>
-                      <div className='business-services-info'>
-                        <h6>
-                          {service.title} {isMobileDevice && <span>{icons.arrowUpRight}</span>}
-                        </h6>
-                        {!isMobileDevice && <p>{service.shortDescription}</p>}
-                      </div>
-                    </div>
-                    {!isMobileDevice && <Link to={service.link}>Read more</Link>}
-                  </article>
-                )
-              })}
-          </section>
-          <br />
-          <h5 className='highlight'>Consulting and Staffing</h5>
-          <section className='business-services-grid'>
-            {businessServices
-              .filter((service: BusinessService) => service.category === 'People')
-              .map((service: BusinessService, index: number) => {
-                return (
-                  <article key={index} className='business-services-item'>
-                    <div className='business-serives-item-main'>
-                      <div className='business-services-item-icon'>{service.icon}</div>
-                      <div className='business-services-info'>
-                        <h6>
-                          {service.title} {isMobileDevice && <span>{icons.arrowUpRight}</span>}
-                        </h6>
-                        {!isMobileDevice && <p>{service.shortDescription}</p>}
-                      </div>
-                    </div>
-                    {!isMobileDevice && <Link to={service.link}>Read more</Link>}
-                  </article>
-                )
-              })}
-          </section> */}
         </section>
       </section>
       <section id='industries' className='industries-container'>
@@ -678,7 +583,7 @@ const Landing = () => {
           </p>
         </section>
       </section>
-      <img src={pictureGallery} alt='picture-gallery' id='Healthcare' className='picture-gallery' />
+
       <section className='success-stories-container'>
         <section className='success-stories-header'>
           <small className='tag'>Success stories</small>
