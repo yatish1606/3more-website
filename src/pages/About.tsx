@@ -5,6 +5,7 @@ import { founders, techStack } from '../data/about'
 import team1 from '../assets/images/team1.jpeg'
 import team2 from '../assets/images/team2.jpeg'
 import team3 from '../assets/images/team3.jpeg'
+import { List } from '../components/CheckList'
 
 const About = () => {
   return (
@@ -47,15 +48,22 @@ const About = () => {
         <br />
         <h3>The Team</h3>
         <br />
-        <p>
-          At our startup, we pride ourselves on cultivating a vibrant team that radiates with a
-          relentless tech focus and boundless energy. Our dynamic group of individuals is driven by
-          a shared passion for innovation and a commitment to delivering more value. We believe that
-          energy, paired with a strong tech-centric mindset, is the catalyst for our success.
-          Together, we embark on a journey to not only meet but exceed expectations, harnessing the
+
+        <List
+          list={[
+            `At our startup, we pride ourselves on cultivating a vibrant team that radiates with a
+          relentless tech focus and boundless energy.`,
+            `Our dynamic group of individuals is driven by
+          a shared passion for innovation and a commitment to delivering more value. `,
+            `We believe that
+          energy, paired with a strong tech-centric mindset, is the catalyst for our success.`,
+            `Together, we embark on a journey to not only meet but exceed expectations, harnessing the
           power of innovation to shape a brighter future for our company and the industries we
-          touch. Join our spirited team, and together, let's turn visions into accomplishments.
-        </p>
+          touch.`,
+            `Join our spirited team, and together, let's turn visions into accomplishments.`,
+          ]}
+        />
+        <p></p>
         <div className='team-grid'>
           <img src={team2} alt='team-lunch' />
           <img src={team1} alt='team-lunch' />

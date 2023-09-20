@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9c98d2eb.css",
-    "main.js": "/static/js/main.e05d508c.js",
+    "main.css": "/static/css/main.e8af34da.css",
+    "main.js": "/static/js/main.8d96347a.js",
     "static/media/rtt1.svg": "/static/media/rtt1.5bf3eb8a48a0ff3484b552013508f3c5.svg",
     "static/media/prashant_pawar.JPG": "/static/media/prashant_pawar.a58d6f5e7d49a2bd628d.JPG",
     "static/media/ntt.svg": "/static/media/ntt.572f4bfdc149771033361b48fafe9123.svg",
@@ -27,7 +27,10 @@
     "static/media/hrms.pdf": "/static/media/hrms.0876271fed667ce54b50.pdf",
     "static/media/TT Hoves Medium.otf": "/static/media/TT Hoves Medium.5422345bf71ef598ba8c.otf",
     "static/media/TT Hoves Regular.otf": "/static/media/TT Hoves Regular.96a811fe35de6ce6d628.otf",
+    "static/media/team2.jpeg": "/static/media/team2.d34d9498c459da8efa80.jpeg",
     "static/media/ent1.svg": "/static/media/ent1.6b9dbce52c99fb1bca85914456a78c7c.svg",
+    "static/media/team3.jpeg": "/static/media/team3.407acaa4c450b950ae4a.jpeg",
+    "static/media/team1.jpeg": "/static/media/team1.5aad6855f5510ae34bd9.jpeg",
     "static/media/logo.svg": "/static/media/logo.4ddd87882bca278d769b557d736d4467.svg",
     "static/media/planning.jpg": "/static/media/planning.cd8d1109009388cc9b3c.jpg",
     "static/media/Hauora-Medium.otf": "/static/media/Hauora-Medium.7adf730d156b1065e017.otf",
@@ -49,11 +52,11 @@
     "static/media/landing-banner-bg-mobile.svg": "/static/media/landing-banner-bg-mobile.2e401774bca1a1d9f796.svg",
     "static/media/landing-banner-bg.svg": "/static/media/landing-banner-bg.4088a98de2d3729eeaeb.svg",
     "index.html": "/index.html",
-    "main.9c98d2eb.css.map": "/static/css/main.9c98d2eb.css.map",
-    "main.e05d508c.js.map": "/static/js/main.e05d508c.js.map"
+    "main.e8af34da.css.map": "/static/css/main.e8af34da.css.map",
+    "main.8d96347a.js.map": "/static/js/main.8d96347a.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c98d2eb.css",
-    "static/js/main.e05d508c.js"
+    "static/css/main.e8af34da.css",
+    "static/js/main.8d96347a.js"
   ]
 }

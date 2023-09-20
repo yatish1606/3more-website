@@ -237,8 +237,11 @@ const Landing = () => {
         <section className='landing-top'>
           <div className='landing-top-title'>
             <h1>
-              Keep Delivering More, <span className='lower-highlight'>With Passion</span>{' '}
+              Keep Delivering <span className='lower-highlight'>More</span>{' '}
             </h1>
+            {/* <h1>
+              Innovation <i>meets</i> Expertise <i>meets</i> Digital Transformation
+            </h1> */}
             <br />
 
             {isMobileDevice ? (
@@ -347,7 +350,7 @@ const Landing = () => {
           </div>
         </section>
       </section>
-      <section className='digital-offerings-container'>
+      <section className='digital-offerings-container' id='digital-offerings-container'>
         <section className='digital-offerings-header'>
           <small className='tag'>DIGITAL OFFERINGS</small>
           <h2>Empowering digital potential</h2>
@@ -365,7 +368,7 @@ const Landing = () => {
                 {/* <p className='first-line'>{firstLine}</p> */}
                 <img src={service.image} alt={service.title} />
                 <p className='rest'>{firstLine}</p>
-                <Link to={service.link}>Read more</Link>
+                <Link to={'/offerings' + service.link}>Read more</Link>
               </article>
             )
           })}

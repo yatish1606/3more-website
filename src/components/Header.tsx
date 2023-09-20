@@ -39,12 +39,12 @@ const Header = (): JSX.Element => {
             </small>
             {isMobileDevice ? (
               <small>
-                <Link to='/offerings#cloud-migration'>{icons.arrowRightLong} </Link>
+                <Link to='#digital-offerings-container'>{icons.arrowRightLong} </Link>
               </small>
             ) : (
               <Fragment>
                 &nbsp;
-                <HashLinkWithFragment path='offerings#cloud-migration'>
+                <HashLinkWithFragment path='#digital-offerings-container'>
                   <small>here</small>
                   {icons.arrowRightLong}
                 </HashLinkWithFragment>
