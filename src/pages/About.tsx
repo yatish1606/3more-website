@@ -33,9 +33,10 @@ const About = () => {
               <div className='founder-box'>
                 <img src={founder.photo} />
 
-                <h5>{founder.name}</h5>
-
-                <p>{founder.role}</p>
+                <div>
+                  <h5>{founder.name}</h5>
+                  <p>{founder.role}</p>
+                </div>
               </div>
             )
           })}

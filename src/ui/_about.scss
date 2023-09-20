@@ -84,6 +84,12 @@
 
       border: 1px solid $grey200;
     }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
 
@@ -100,5 +106,60 @@
     height: 100%;
     border-radius: $border-radius-lg;
     border-radius: 1px solid $grey200;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .about-container {
+    background-color: $white;
+  }
+  .founders-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+
+    .founder-box {
+      flex-direction: row;
+      align-items: center;
+      padding: 1rem;
+
+      img {
+        width: 5rem;
+        margin-right: 2rem;
+        margin-bottom: 0;
+      }
+
+      div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+
+  .tech-stack-container .tech-stack-item {
+    flex-direction: column;
+    width: 100%;
+    height: unset;
+    align-items: flex-start !important;
+
+    .tech-stack-item-name {
+      width: 100%;
+      height: unset;
+      padding: 1rem 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    .tech-stack-list {
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
   }
 }
