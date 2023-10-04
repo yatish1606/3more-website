@@ -96,6 +96,14 @@ const About = () => {
             </div>
           )
         })}
+        <br />
+        <small>
+          Trademark Disclaimer: All product names, trademarks and registered trademarks are property
+          of their respective owners. All company, product and service names used in this website
+          are for identification purposes only. Use of these names, trademarks and brands dos not
+          imply endorsement of affiliation.
+        </small>
+        <br />
       </div>
     </div>
   )

@@ -40,7 +40,7 @@ const projects: Project[] = [
       'To Build platform which helps Patients, Physiotherapist and  related centers to manage overall lifecycle from Enquiry to Appointment.',
       'To improve experience of Patients and Executives',
     ],
-    about: 'PTWiki platform is a multichannel platform with overall Lead management capability ',
+    about: 'Platform is a multichannel platform with overall Lead management capability ',
     keyFunctionality: [
       'Generate Lead through seamless integration with Social Media',
       'Registration of Patient',
@@ -73,12 +73,12 @@ const projects: Project[] = [
     images: [],
   },
   {
-    title: 'Reserve The Table',
+    title: 'Online Table Booking',
     objective: [
       'To Build platform which helps Restaurant to manage real time table booking effectively',
       'Allows Customer to do online table booking with few Taps using Phone',
     ],
-    about: 'RTT Platform automates the key operations of Restaurant',
+    about: 'Platform automates the key operations of Restaurant',
     keyFunctionality: [
       'Registration of Customer',
       'Self Booking, Call & Book Table',
@@ -129,14 +129,14 @@ const projects: Project[] = [
     marketingTitle: 'ENT Telemedicine platform',
   },
   {
-    title: 'UOPeople',
+    title: ' ',
     objective: [
       'Perform strategic review of IT systems and IT Processes in order to support the future business growth',
       'Provide recommendations and high level implementation roadmap to meet future growth plan in terms of availability, scalability and performance.',
     ],
     images: [],
     about:
-      'UoPeople is the first non-profit, tuition-free, American, accredited, online university.',
+      'Strategic review for the first non-profit, tuition-free, American, accredited, online university.',
     keyFunctionality: [
       'Re-engineer existing Application landscape',
       'Suggested organization structural changes',
@@ -145,7 +145,7 @@ const projects: Project[] = [
       'Improved Time to Market, Optimal Infrastructure',
     ],
     downloadLink: uopeopleBrochure,
-    marketingTitle: 'Portfolio assessment for UOPeople',
+    marketingTitle: 'Portfolio assessment',
   },
   {
     title: 'MES',
