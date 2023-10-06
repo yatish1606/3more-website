@@ -586,91 +586,6 @@ $business-offerings-art-box-mobile: 2.5rem;
     // position: sticky;
     // top: $header-height-with-banner;
     // background-color: $white;
-
-    .business-services-grid {
-      width: 100%;
-      // background-color: honeydew;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-gap: 2rem;
-      margin: 1rem 0;
-      margin-top: 1.5rem;
-
-      a {
-        width: 100%;
-        height: 100%;
-      }
-
-      .business-services-item {
-        background-color: transparent;
-        width: 100%;
-        height: 100%;
-        // aspect-ratio: 1;
-        display: flex;
-        flex-direction: column;
-        border-radius: $border-radius-lg;
-        overflow: hidden;
-        justify-content: space-between;
-        padding: 1.25rem;
-        cursor: pointer;
-        border: 1px solid $grey300;
-        transition: 200ms ease-out;
-
-        .business-services-item-main {
-          height: fit-content;
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-        }
-
-        &:hover {
-          background-color: $grey200;
-          transition: 200ms ease-out;
-        }
-
-        // img {
-        //   width: 100%;
-        //   aspect-ratio: 1 / 0.5;
-        //   border-radius: $border-radius-lg;
-        //   object-fit: cover;
-        //   border-bottom-left-radius: 0;
-        //   border-bottom-right-radius: 0;
-        // }
-
-        .business-services-item-icon {
-          width: 2.75rem;
-          height: 2.75rem;
-          border-radius: $border-radius-lg;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          // background-color: $grey800;
-          border: 1px solid $grey300;
-          margin-bottom: 1.5rem;
-          border-radius: $border-radius-lg;
-          border: 1px solid $grey300;
-          backdrop-filter: blur(5px) saturate(1.2);
-          background: url('../assets/images//landing-banner-bg.svg');
-          background-size: cover;
-
-          svg {
-            width: 1.25rem;
-            height: 1.25rem;
-            stroke: $grey800;
-          }
-        }
-
-        .business-services-info {
-          display: flex;
-          flex-direction: column;
-
-          h6 {
-            margin-top: 0;
-            font-size: 1.1rem;
-          }
-        }
-      }
-    }
   }
 }
 
@@ -974,7 +889,99 @@ $business-offerings-art-box-mobile: 2.5rem;
   }
 }
 
+.business-services-grid {
+  width: 100%;
+  // background-color: honeydew;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2rem;
+  margin: 1rem 0;
+  margin-top: 1.5rem;
+
+  a {
+    width: 100%;
+    height: 100%;
+  }
+
+  .business-services-item {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    // aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 1.25rem;
+    cursor: pointer;
+    border: 1px solid $grey300;
+    transition: 200ms ease-out;
+
+    .business-services-item-main {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: $grey200;
+      transition: 200ms ease-out;
+    }
+
+    // img {
+    //   width: 100%;
+    //   aspect-ratio: 1 / 0.5;
+    //   border-radius: $border-radius-lg;
+    //   object-fit: cover;
+    //   border-bottom-left-radius: 0;
+    //   border-bottom-right-radius: 0;
+    // }
+
+    .business-services-item-icon {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: $border-radius-lg;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // background-color: $grey800;
+      border: 1px solid $grey300;
+      margin-bottom: 1.5rem;
+      border-radius: $border-radius-lg;
+      border: 1px solid $grey300;
+      backdrop-filter: blur(5px) saturate(1.2);
+      background: url('../assets/images//landing-banner-bg.svg');
+      background-size: cover;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        stroke: $grey800;
+      }
+    }
+
+    .business-services-info {
+      display: flex;
+      flex-direction: column;
+
+      h6 {
+        margin-top: 0;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.for-digital {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 @media screen and (max-width: 720px) {
+  .for-digital {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
   .landing-container {
     .banner {
       display: flex;
@@ -1375,94 +1382,6 @@ $business-offerings-art-box-mobile: 2.5rem;
       // position: sticky;
       // top: $header-height-with-banner;
       // background-color: $white;
-
-      .business-services-grid {
-        width: 100%;
-        // background-color: honeydew;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: $side-padding-mobile;
-        margin: 1rem 0;
-        margin-top: 0;
-
-        .business-services-item {
-          background-color: transparent;
-          width: 100%;
-          height: 100%;
-          // aspect-ratio: 1;
-          display: flex;
-          flex-direction: column;
-          border-radius: $border-radius-lg;
-          overflow: hidden;
-          justify-content: space-between;
-          padding: 1rem;
-          cursor: pointer;
-          border: 1px solid $grey200;
-
-          transition: 200ms ease-out;
-
-          .business-services-item-main {
-            height: fit-content;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-          }
-
-          &:hover {
-            background-color: $grey200;
-            transition: 200ms ease-out;
-          }
-
-          // img {
-          //   width: 100%;
-          //   aspect-ratio: 1 / 0.5;
-          //   border-radius: $border-radius-lg;
-          //   object-fit: cover;
-          //   border-bottom-left-radius: 0;
-          //   border-bottom-right-radius: 0;
-          // }
-
-          .business-services-item-icon {
-            width: 2.2rem;
-            height: 2.2rem;
-            border-radius: $border-radius-lg;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            // background-color: $grey800;
-            margin-bottom: 1rem;
-            border-radius: $border-radius-lg;
-            border: 1px solid $grey300;
-            backdrop-filter: blur(5px) saturate(1.2);
-            background: url('../assets/images//landing-banner-bg.svg');
-            background-size: cover;
-
-            svg {
-              width: 0.9rem;
-              height: 0.9rem;
-            }
-          }
-
-          .business-services-info {
-            display: flex;
-            flex-direction: column;
-
-            h6 {
-              margin-top: 0;
-              margin-bottom: 0;
-
-              svg {
-                width: 1rem;
-                height: 1rem;
-                stroke: $orangeDark;
-                margin-left: 0.5rem;
-                transform: translateY(0.25rem);
-                display: none;
-              }
-            }
-          }
-        }
-      }
     }
   }
 
@@ -1755,6 +1674,94 @@ $business-offerings-art-box-mobile: 2.5rem;
           color: $grey600;
           margin-bottom: -0rem;
           margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  .business-services-grid {
+    width: 100%;
+    // background-color: honeydew;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $side-padding-mobile;
+    margin: 1rem 0;
+    margin-top: 0;
+
+    .business-services-item {
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      // aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      border-radius: $border-radius-lg;
+      overflow: hidden;
+      justify-content: space-between;
+      padding: 1rem;
+      cursor: pointer;
+      border: 1px solid $grey200;
+
+      transition: 200ms ease-out;
+
+      .business-services-item-main {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      &:hover {
+        background-color: $grey200;
+        transition: 200ms ease-out;
+      }
+
+      // img {
+      //   width: 100%;
+      //   aspect-ratio: 1 / 0.5;
+      //   border-radius: $border-radius-lg;
+      //   object-fit: cover;
+      //   border-bottom-left-radius: 0;
+      //   border-bottom-right-radius: 0;
+      // }
+
+      .business-services-item-icon {
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: $border-radius-lg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // background-color: $grey800;
+        margin-bottom: 1rem;
+        border-radius: $border-radius-lg;
+        border: 1px solid $grey300;
+        backdrop-filter: blur(5px) saturate(1.2);
+        background: url('../assets/images//landing-banner-bg.svg');
+        background-size: cover;
+
+        svg {
+          width: 0.9rem;
+          height: 0.9rem;
+        }
+      }
+
+      .business-services-info {
+        display: flex;
+        flex-direction: column;
+
+        h6 {
+          margin-top: 0;
+          margin-bottom: 0;
+
+          svg {
+            width: 1rem;
+            height: 1rem;
+            stroke: $orangeDark;
+            margin-left: 0.5rem;
+            transform: translateY(0.25rem);
+            display: none;
+          }
         }
       }
     }

@@ -31,6 +31,30 @@ const Offerings = () => {
         <InlineEmailForm />
         <br />
       </section>
+      <section className='offerings-main-container business-offerings-main-container '>
+        <br />
+        <h2>Digital solutions to industry problems</h2>
+
+        <div className='digital-offerings-listing'>
+          {digitalServices.map((service: DigitalService, index: number) => {
+            const firstLine: string = service.shortDescription.split('.')[0]
+            const rest: string = service.shortDescription
+              .replace(firstLine.replace('.', ''), '')
+              .replace('.', '')
+              .trim()
+            return (
+              <article className='digital-offering-item' id={service.link.replace('#', '')}>
+                <h5 dangerouslySetInnerHTML={{ __html: service.title }}></h5>
+                {/* <p className='first-line'>{firstLine}</p> */}
+
+                <img src={service.image} alt={service.title} />
+
+                <p className='rest'>{firstLine}</p>
+              </article>
+            )
+          })}
+        </div>
+      </section>
       <section className='offerings-main-container business-offerings-main-container'>
         <h2>We craft business solutions that help you with ...</h2>
         <br />

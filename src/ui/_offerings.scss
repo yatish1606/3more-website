@@ -266,6 +266,56 @@
       }
     }
   }
+
+  .digital-offerings-listing {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    padding: 3rem 0 0 0;
+
+    .digital-offering-item {
+      // height: 40rem;
+      // background-color: azure;
+      display: flex;
+      flex-direction: column;
+
+      h5 {
+        height: 5.5rem;
+        // background-color: red;
+        // display: flex;
+        align-items: flex-start;
+        margin-bottom: 0;
+        text-decoration: none;
+
+        span {
+          @extend h5;
+          // border-bottom: 0.2rem solid $orange;
+        }
+      }
+
+      p {
+        margin: 0.75rem 0;
+        text-decoration: none;
+        height: 6rem;
+
+        &.first-line {
+          height: 5rem;
+          // background-color: salmon;
+        }
+      }
+
+      img {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        margin: 0.5rem 0;
+        border-radius: $border-radius-lg;
+
+        box-shadow: inset 0 0 2rem 2rem black;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 620px) {
   .offerings-container {
@@ -319,5 +369,56 @@
 
   .offerings-container .digital-offerings-main-item {
     flex-direction: column !important;
+  }
+
+  .offerings-container .digital-offerings-listing {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1.5rem;
+    padding: 2rem 0 0 0;
+
+    .digital-offering-item {
+      display: flex;
+      flex-direction: column;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $grey200;
+        padding-bottom: 1rem;
+      }
+
+      h5 {
+        height: auto;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+
+        span {
+          // border-bottom: 0.2rem solid $orange;
+        }
+      }
+
+      p {
+        margin: 0.75rem 0;
+        text-decoration: none;
+        height: auto;
+        margin-bottom: 0;
+
+        &.first-line {
+          height: auto;
+          // background-color: salmon;
+        }
+      }
+
+      img {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        margin: 0.5rem 0;
+        border-radius: $border-radius-lg;
+
+        box-shadow: inset 0 0 2rem 2rem black;
+      }
+    }
   }
 }

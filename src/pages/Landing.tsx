@@ -355,21 +355,26 @@ const Landing = () => {
           <small className='tag'>DIGITAL OFFERINGS</small>
           <h2>Empowering digital potential</h2>
         </section>
-        <section className='digital-offerings-listing'>
+        <section className='business-services-grid for-digital'>
           {digitalServices.map((service: DigitalService, index: number) => {
-            const firstLine: string = service.shortDescription.split('.')[0]
-            const rest: string = service.shortDescription
-              .replace(firstLine.replace('.', ''), '')
-              .replace('.', '')
-              .trim()
+            const text = service.title
+              .replaceAll('<span className="highlight">', '')
+              .replaceAll('</span>', '')
             return (
-              <article className='digital-offering-item'>
-                <h5 dangerouslySetInnerHTML={{ __html: service.title }}></h5>
-                {/* <p className='first-line'>{firstLine}</p> */}
-                <img src={service.image} alt={service.title} />
-                <p className='rest'>{firstLine}</p>
-                <Link to={'/offerings' + service.link}>Read more</Link>
-              </article>
+              <HashLinkWithFragment path={'offerings' + service.link} className='no-default-a'>
+                <article key={index} className='business-services-item'>
+                  <div className='business-serives-item-main'>
+                    <div className='business-services-item-icon'>{service.icon}</div>
+                    <div className='business-services-info'>
+                      <h6>
+                        {text} {isMobileDevice && <span>{icons.arrowUpRight}</span>}
+                      </h6>
+                      {/* {!isMobileDevice && <p>{service.shortDescription}</p>} */}
+                    </div>
+                  </div>
+                  {/* {!isMobileDevice && <Link to={service.link}>Read more</Link>} */}
+                </article>
+              </HashLinkWithFragment>
             )
           })}
         </section>
