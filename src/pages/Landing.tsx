@@ -419,7 +419,7 @@ const Landing = () => {
             />
             <br />
             {!isMobileDevice && (
-              <Link to='#success-stories' className='link-border'>
+              <Link to='/about' className='link-border'>
                 <div className='tag'>About</div> Learn more about how we operate{' '}
                 {icons.arrowRightLong}
               </Link>
@@ -524,7 +524,7 @@ const Landing = () => {
               challange successfully
             </p>
             <br />
-            <Link to='#' className='link-border'>
+            <Link to='/portfolio' className='link-border'>
               <div className='tag'>Explore</div> See more case studies {icons.arrowRightLong}
             </Link>
           </div>

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.61345fd9.css",
-    "main.js": "/static/js/main.5fcbfe4a.js",
+    "main.css": "/static/css/main.077b830e.css",
+    "main.js": "/static/js/main.182b4740.js",
     "static/media/rtt1.svg": "/static/media/rtt1.5bf3eb8a48a0ff3484b552013508f3c5.svg",
     "static/media/prashant_pawar.JPG": "/static/media/prashant_pawar.a58d6f5e7d49a2bd628d.JPG",
     "static/media/ntt.svg": "/static/media/ntt.572f4bfdc149771033361b48fafe9123.svg",
@@ -52,11 +52,11 @@
     "static/media/landing-banner-bg-mobile.svg": "/static/media/landing-banner-bg-mobile.2e401774bca1a1d9f796.svg",
     "static/media/landing-banner-bg.svg": "/static/media/landing-banner-bg.4088a98de2d3729eeaeb.svg",
     "index.html": "/index.html",
-    "main.61345fd9.css.map": "/static/css/main.61345fd9.css.map",
-    "main.5fcbfe4a.js.map": "/static/js/main.5fcbfe4a.js.map"
+    "main.077b830e.css.map": "/static/css/main.077b830e.css.map",
+    "main.182b4740.js.map": "/static/js/main.182b4740.js.map"
   },
   "entrypoints": [
-    "static/css/main.61345fd9.css",
-    "static/js/main.5fcbfe4a.js"
+    "static/css/main.077b830e.css",
+    "static/js/main.182b4740.js"
   ]
 }
