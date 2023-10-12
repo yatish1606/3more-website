@@ -1,30 +1,30 @@
 {
   "files": {
     "main.css": "/static/css/main.077b830e.css",
-    "main.js": "/static/js/main.182b4740.js",
+    "main.js": "/static/js/main.daf1eea1.js",
     "static/media/rtt1.svg": "/static/media/rtt1.5bf3eb8a48a0ff3484b552013508f3c5.svg",
     "static/media/prashant_pawar.JPG": "/static/media/prashant_pawar.a58d6f5e7d49a2bd628d.JPG",
     "static/media/ntt.svg": "/static/media/ntt.572f4bfdc149771033361b48fafe9123.svg",
     "static/media/hrwikki.svg": "/static/media/hrwikki.be1a8ca946ba1db142e119d88bd86b8a.svg",
     "static/media/hrwikki_video.mp4": "/static/media/hrwikki_video.a6f60935b4caefe7cab5.mp4",
-    "static/media/finaqa.pdf": "/static/media/finaqa.60977cc53c4edc7c44a4.pdf",
+    "static/media/finaqa.pdf": "/static/media/finaqa.a48c85d3eed350b5b37d.pdf",
     "static/media/cybersecurity.svg": "/static/media/cybersecurity.fa48772a03a4e88cc96cf9d3600e7535.svg",
-    "static/media/rtt.pdf": "/static/media/rtt.990ec1273829eff9e5ce.pdf",
+    "static/media/rtt.pdf": "/static/media/rtt.006d0c0eb4a650b57b8b.pdf",
     "static/media/mobile-dev.svg": "/static/media/mobile-dev.6a1a8490c7e8a8d09e386ddd0f6f557b.svg",
     "static/media/rtt2.svg": "/static/media/rtt2.4cf11f133b494d45acd18dbc4804073e.svg",
-    "static/media/ent.pdf": "/static/media/ent.c87bd57b1280433c5cd4.pdf",
+    "static/media/ent.pdf": "/static/media/ent.40d1b069fbcc0ea7c6be.pdf",
     "static/media/ptwikki-landing.svg": "/static/media/ptwikki-landing.dbf6bac7ee18c39d18db5c48625364a4.svg",
     "static/media/finaqa.svg": "/static/media/finaqa.bfce979ffb7a8ca7beecf514603ae879.svg",
     "static/media/consulting_video.mp4": "/static/media/consulting_video.131978be841853608b8b.mp4",
+    "static/media/ptwikki.pdf": "/static/media/ptwikki.c00d10a95d9d92fd000d.pdf",
     "static/media/mobile-development.jpg": "/static/media/mobile-development.888552852d0f52f55a70.jpg",
-    "static/media/ptwikki.pdf": "/static/media/ptwikki.bfc6fa5328a0e0619ea6.pdf",
     "static/media/ptwikki.svg": "/static/media/ptwikki.33c063cb3d72b0db65ea13f30f68f4e3.svg",
+    "static/media/mes.pdf": "/static/media/mes.10478f8ad068dda0c10b.pdf",
     "static/media/staffing_video.mp4": "/static/media/staffing_video.2f0d3ba16569ec98ce8f.mp4",
-    "static/media/mes.pdf": "/static/media/mes.dd8dc5b7e1a1c82a1f91.pdf",
-    "static/media/uopeople.pdf": "/static/media/uopeople.9ffc68a02eba6da8f30f.pdf",
+    "static/media/uopeople.pdf": "/static/media/uopeople.113fb9c93e22384f5a35.pdf",
     "static/media/relative-book.ttf": "/static/media/relative-book.342a213f0514da1c9e95.ttf",
+    "static/media/hrms.pdf": "/static/media/hrms.3b23680019b7ff6788c9.pdf",
     "static/media/ent2.svg": "/static/media/ent2.ef8508d438ff7f7559b515c5499767cb.svg",
-    "static/media/hrms.pdf": "/static/media/hrms.3e1ffbb9aeb8475e07e4.pdf",
     "static/media/TT Hoves Medium.otf": "/static/media/TT Hoves Medium.5422345bf71ef598ba8c.otf",
     "static/media/TT Hoves Regular.otf": "/static/media/TT Hoves Regular.96a811fe35de6ce6d628.otf",
     "static/media/team2.jpeg": "/static/media/team2.d34d9498c459da8efa80.jpeg",
@@ -53,10 +53,10 @@
     "static/media/landing-banner-bg.svg": "/static/media/landing-banner-bg.4088a98de2d3729eeaeb.svg",
     "index.html": "/index.html",
     "main.077b830e.css.map": "/static/css/main.077b830e.css.map",
-    "main.182b4740.js.map": "/static/js/main.182b4740.js.map"
+    "main.daf1eea1.js.map": "/static/js/main.daf1eea1.js.map"
   },
   "entrypoints": [
     "static/css/main.077b830e.css",
-    "static/js/main.182b4740.js"
+    "static/js/main.daf1eea1.js"
   ]
 }
