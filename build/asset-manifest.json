@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.077b830e.css",
-    "main.js": "/static/js/main.daf1eea1.js",
+    "main.js": "/static/js/main.94ff5ea4.js",
     "static/media/rtt1.svg": "/static/media/rtt1.5bf3eb8a48a0ff3484b552013508f3c5.svg",
     "static/media/prashant_pawar.JPG": "/static/media/prashant_pawar.a58d6f5e7d49a2bd628d.JPG",
     "static/media/ntt.svg": "/static/media/ntt.572f4bfdc149771033361b48fafe9123.svg",
@@ -16,7 +16,7 @@
     "static/media/ptwikki-landing.svg": "/static/media/ptwikki-landing.dbf6bac7ee18c39d18db5c48625364a4.svg",
     "static/media/finaqa.svg": "/static/media/finaqa.bfce979ffb7a8ca7beecf514603ae879.svg",
     "static/media/consulting_video.mp4": "/static/media/consulting_video.131978be841853608b8b.mp4",
-    "static/media/ptwikki.pdf": "/static/media/ptwikki.c00d10a95d9d92fd000d.pdf",
+    "static/media/ptwikki.pdf": "/static/media/ptwikki.f4989cd3da1df6c7812d.pdf",
     "static/media/mobile-development.jpg": "/static/media/mobile-development.888552852d0f52f55a70.jpg",
     "static/media/ptwikki.svg": "/static/media/ptwikki.33c063cb3d72b0db65ea13f30f68f4e3.svg",
     "static/media/mes.pdf": "/static/media/mes.10478f8ad068dda0c10b.pdf",
@@ -53,10 +53,10 @@
     "static/media/landing-banner-bg.svg": "/static/media/landing-banner-bg.4088a98de2d3729eeaeb.svg",
     "index.html": "/index.html",
     "main.077b830e.css.map": "/static/css/main.077b830e.css.map",
-    "main.daf1eea1.js.map": "/static/js/main.daf1eea1.js.map"
+    "main.94ff5ea4.js.map": "/static/js/main.94ff5ea4.js.map"
   },
   "entrypoints": [
     "static/css/main.077b830e.css",
-    "static/js/main.daf1eea1.js"
+    "static/js/main.94ff5ea4.js"
   ]
 }

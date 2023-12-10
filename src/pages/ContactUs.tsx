@@ -83,7 +83,20 @@ const ContactUs = (): JSX.Element => {
         alert('Form submitted successfully')
       })
       .catch(() => alert('Could not submit form. Please try after some time'))
-      .finally(() => {})
+      .finally(() => {
+        if (nameRef.current != null) {
+          nameRef.current.value = ''
+        }
+        if (emailRef.current != null) {
+          emailRef.current.value = ''
+        }
+        if (phoneRef.current != null) {
+          phoneRef.current.value = ''
+        }
+        if (messageRef.current != null) {
+          messageRef.current.value = ''
+        }
+      })
   }
 
   return (
